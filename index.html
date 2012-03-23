@@ -3,10 +3,119 @@
    <head>
       <title> My awesome home page!</title>
       <link rel="stylesheet" href="style.css" type="text/css">
-      <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+      <script type="text/javascript" src="jquery.js"></script>
       <script type="text/javascript">
-      	
+      	$(function ()
+      	{
+      		var selected = null;
+      		
+      		$("a.section").each(function ()
+      		{
+      			if ($(this).attr("id") != "about-me") 
+      			{
+      				var ele = $("#" + $(this).attr("id") + "-content");
+      				
+      				ele.css("top", "-20px");
+      				ele.css("opacity", "0.0");
+      			}
+      			else
+      			{
+      				selected = $("#" + $(this).attr("id") + "-content");
+      				selected.css("z-index", "2");
+      			}
+      		});
+      		
+      		$("a.section").click(function ()
+      		{
+      			var ele = $("#" + $(this).attr("id") + "-content");
+      			
+      			if (selected != null)
+      			{
+      				if (ele.attr("id") == selected.attr("id"))
+      				{
+      					return false;
+      				}
+      				
+      				selected.animate(
+      					{opacity: 0.0, top: "20px"},
+      					300,
+      					function ()
+      					{
+      						$(this).css("top", "-20px");
+      					}
+      				);
+      				selected.css("z-index", "1");
+      			}
+      				
+				ele.animate({opacity: 1.0, top: "0px"}, 300);
+				ele.css("z-index", "2");
+				      				
+				selected = ele;
+				
+				return false;
+      		});
+      	});
       </script>
+      <script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-30212110-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
    </head>
-   <body> Hello World! </body>
+   <body>
+   	<div id="header">
+   		<a href="index.html"><img src="header.png" alt="Header Image" /></a>
+   		<h1>TgashbyGames</h1>
+   		<h2>Run solely by Taggart Ashby</h2>
+   	</div>
+   	
+   	<div id="right">
+   		<a class="section" id="about-me" href="#">About Me</a>
+   		<a class="section" id="blog" href="#">Blog</a>
+   		<a class="section" id="projects" href="#">Projects</a>
+   		<a class="section" id="twitter" href="#">Twitter</a>
+   		<a class="section" id="resume" href="#">Resume</a>   		
+   	</div>
+   	
+   	<div id="left">
+   		<div id="about-me-content">
+   			<h3>About Me</h3>
+   		</div>
+   		<div id="blog-content">
+   			<h3>Blag</h3>
+   		</div>
+   		
+   		<div id="projects-content">
+   			<h3>Projects</h3>
+   		</div>
+   		
+   		<div id="twitter-content">
+   			<h3>Twitter</h3>
+   		</div>
+   		
+   		<div id="resume-content">
+   			<h3>Resume</h3>
+   		</div>
+   		
+   	</div>
+   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
