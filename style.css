@@ -21,7 +21,7 @@ body
 	top: 50%;
 	width: 160px;
 	height: 160px;
-	margin-left: -450px;
+	margin-left: -550px;
 	margin-top: -80px;
 	border: 0;
 }
@@ -31,7 +31,7 @@ body
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-left: -240px;
+	margin-left: -350px;
 	margin-top: -85px;
 	color: #000000;
 	font: bold 96px Verdana;
@@ -54,10 +54,10 @@ body
 {
 	position: absolute;
 	top: 220px;
-	left: 50%;
+	right: 10%;
 	width: 250px;
 	height: 400px;
-	margin-right: -435px;
+	margin-left: -435px;
 }
 
 #right a.section
@@ -101,10 +101,10 @@ body
 {
 	position: absolute;
 	top: 220px;
-	left: 50%;
+	left: 25%;
 	width: 600px;
 	height: 400px;
-	margin-right: -165px;
+	margin-left: -165px;
 }
 
 #left div
