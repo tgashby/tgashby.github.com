@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
-		<title> My awesome home page!</title>
+		<title>TgashbyGames: A front for Taggart Ashby</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript">
@@ -53,7 +52,8 @@
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-30212110-1']);
-			_gaq.push(['_trackPageview']); (function() {
+			_gaq.push(['_trackPageview']);
+			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';
 				ga.async = true;
@@ -63,28 +63,6 @@
 			})();
 
 		</script>
-		<?php
-			$twitter_feed = "https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=TgashbyGames";
-			$twitter_limit = 5;
-			$twitter = array();
-	
-			$stream = file_get_contents($twitter_feed);
-			$in = new DomDocument();
-			$in->loadXML($stream);
-	
-			$items = $in->getElementsByTagName("item");
-			$count = 0;
-			foreach ($items as $item) {
-			$updates = $item->getElementsByTagName("description");
-			$update = $updates->item(0)->nodeValue;
-			$update = substr($update, strlen("tgashbygames: ") - 1);
-	
-			$twitter[] = $update;
-			$count++;
-			if ($count >= $twitter_limit) break;
-			}
-		?>
-		
 	</head>
 	<body>
 		<div id="header">
@@ -135,23 +113,7 @@
 					I do my best to post twitter updates, but I can't say I'm all that great at it.... yet.
 				</p>
 				<a class="bigbutton" href="http://twitter.com/TgashbyGames"><img src="img/twitter.png">&nbsp;@TgashbyGames</a>
-				<p>
-					Here's my most recent posts:
-				</p>
-
-				<ul>
-					<?php
-					foreach($twitter as $tweet) {
-					echo "
-					<li>
-						" . $tweet . "
-					</li>
-					";
-					}
-					?>
-				</ul>
 			</div>
-			
 			<div id="resume-content">
 				<h3>Resume</h3>
 				<p>
