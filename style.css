@@ -54,10 +54,7 @@ body
 {
 	position: absolute;
 	top: 220px;
-	right: 10%;
-	width: 250px;
-	height: 400px;
-	margin-left: -435px;
+	margin-left: 15%;
 }
 
 #right a.section
@@ -71,6 +68,8 @@ body
 	text-align: center;
 	line-height: 60px;
 	text-decoration: none;
+	float: left;
+	margin-left: 10px;
 }
 
 #right a.section:link 
@@ -100,11 +99,10 @@ body
 #left
 {
 	position: absolute;
-	top: 220px;
-	left: 25%;
+	top: 300px;
 	width: 600px;
 	height: 400px;
-	margin-left: -165px;
+	margin-left: 40%;
 }
 
 #left div
