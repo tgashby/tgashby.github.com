@@ -19,12 +19,27 @@ function Player()
 	this.sprite = new Image();
 	this.sprite.src = "img/BillyHappy.png";
 	
-	this.pos.y = Globals.GAMEHEIGHT - this.sprite.height;
+	// If we need to collision detect, since we're using a spritesheet we need to keep track of width seperately
+	this.width = 40;
+	this.height = this.sprite.height;
+	
+	this.pos.y = Globals.GAMEHEIGHT - this.height;
+	
+	this.moveTimer = 0;
 }
 
 Player.prototype.draw = function(context)
 {
-	context.drawImage(this.sprite, this.pos.x, this.pos.y);
+	var spritePos;
+	
+	if (this.moveTimer % 60 < 60 / 3)
+		spritePos = 0; 
+	else if (this.moveTimer % 60 < 60 / 2)
+		spritePos = this.width;
+	else
+		spritePos = this.width * 2;
+			
+	context.drawImage(this.sprite, spritePos, 0, this.width, this.width, this.pos.x, this.pos.y, 40, 40);
 }
 
 Player.prototype.moveLeft = function()
@@ -60,6 +75,11 @@ Player.prototype.moveDown = function()
 
 Player.prototype.update = function()
 {
+	this.moveTimer++;
+	
+	if (this.moveTimer > 60)
+		this.moveTimer = 0;
+	
 	// HACK for now, may just stay in if we don't have anything to jump on...
 	if (this.pos.y + this.sprite.height >= Globals.GAMEHEIGHT)
 	{
