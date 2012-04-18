@@ -4,10 +4,13 @@
 	<head>
 		<title>Self Control'd</title>
 		
-		<script type="text/javascript" src="js/Key.js"></script>
+		<script type="text/javascript" src="js/Globals.js"></script>
+		<script type="text/javascript" src="js/Input.js"></script>
 		<script type="text/javascript" src="js/Player.js"></script>
 		
 		<script type="text/javascript">
+		var mousePos;
+		
 		window.addEventListener('keyup', function(event)
 		{
 			Key.onKeyup(event);
@@ -18,6 +21,21 @@
 			Key.onKeydown(event);
 		}, false);
 
+		window.addEventListener('mousemove', function(event)
+		{
+			mousePos = Mouse.getPosition(document.getElementById("478Canvas"), event);
+		}, false);
+		
+		window.addEventListener('click', function(event)
+		{
+			// var canvas = document.getElementById("478Canvas");
+			// var ctx = canvas.getContext("2d");
+// 			
+			// ctx.moveTo(0, 0);
+			// ctx.lineTo(mousePos.x, mousePos.y);
+			// ctx.stroke();
+		}, false);
+		
 		var Game =
 		{
 			fps : 60,
@@ -25,7 +43,7 @@
 			height : 600
 		};
 
-		Game._onEachFrame = (function()
+		Game.onEachFrame = (function()
 		{
 			var requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 
@@ -57,7 +75,7 @@
 			
 			Game.player = new Player();
 			
-			Game._onEachFrame(Game.run);
+			Game.onEachFrame(Game.run);
 		};
 		
 		Game.run = (function()
