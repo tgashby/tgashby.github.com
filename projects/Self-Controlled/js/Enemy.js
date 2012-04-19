@@ -20,6 +20,8 @@ function Enemy()
 	this.height = 40;
 	
 	this.moveTimer = 0;
+	
+	this.pos.y = 560;
 };
 
 Enemy.prototype.update = function()

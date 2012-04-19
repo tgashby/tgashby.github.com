@@ -125,7 +125,29 @@
 	      {
 	      	enemy.update();
 	      });
+	      
+	      checkCollisions();
 	    };
+	    
+	    function collides(a, b) 
+		{			
+			return a.pos.x < b.x + b.width &&
+	            a.pos.x + a.width > b.pos.x &&
+	            a.pos.y < b.pos.y + b.height &&
+	            a.pos.y + a.height > b.pos.y;
+		}
+		
+		function checkCollisions()
+		{
+			Game.enemies.forEach(function(enemy) 
+			{
+			    if (collides(enemy, Game.player)) 
+			    {
+			      // Collision stuff!
+			      Game.enemies.splice(Game.enemies.indexOf(enemy), 1);
+			    }
+		  	});
+		}
 		</script>
 	</head>
 	
