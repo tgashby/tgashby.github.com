@@ -21,7 +21,7 @@ function Player()
 	
 	// If we need to collision detect, since we're using a spritesheet we need to keep track of width seperately
 	this.width = 40;
-	this.height = this.sprite.height;
+	this.height = 40;
 	
 	this.pos.y = Globals.GAMEHEIGHT - this.height;
 	
@@ -39,7 +39,7 @@ Player.prototype.draw = function(context)
 	else
 		spritePos = this.width * 2;
 			
-	context.drawImage(this.sprite, spritePos, 0, this.width, this.width, this.pos.x, this.pos.y, 40, 40);
+	context.drawImage(this.sprite, spritePos, 0, this.width, this.height, this.pos.x, this.pos.y, this.width, this.height);
 }
 
 Player.prototype.moveLeft = function()

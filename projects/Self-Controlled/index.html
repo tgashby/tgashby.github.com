@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="js/Globals.js"></script>
 		<script type="text/javascript" src="js/Input.js"></script>
 		<script type="text/javascript" src="js/Player.js"></script>
+		<script type="text/javascript" src="js/Enemy.js"></script>
 		
 		<script type="text/javascript">
 		var mousePos;
@@ -40,7 +41,8 @@
 		{
 			fps : 60,
 			width : 800,
-			height : 600
+			height : 600,
+			enemies : []
 		};
 
 		Game.onEachFrame = (function()
@@ -75,6 +77,10 @@
 			
 			Game.player = new Player();
 			
+			Game.enemies.push(new Enemy());
+			Game.enemies.push(new Enemy());
+			Game.enemies.push(new Enemy());
+			
 			Game.onEachFrame(Game.run);
 		};
 		
@@ -82,9 +88,7 @@
 		{
 			var loops = 0;
 			var skipTicks = 1000 / Game.fps;
-			var maxFrameSkip = 10;
 			var nextGameTick = (new Date).getTime();
-			var lastGameTick = 0;
 			
 			return function()
 			{
@@ -106,11 +110,21 @@
 		{
 			Game.context.clearRect(0, 0, Game.width, Game.height);
 			Game.player.draw(Game.context);
+			
+			Game.enemies.forEach(function(enemy)
+			{
+				enemy.draw(Game.context);
+			});
 		}
 		
 		Game.update = function() 
 		{
 	      Game.player.update();
+	      
+	      Game.enemies.forEach(function(enemy)
+	      {
+	      	enemy.update();
+	      });
 	    };
 		</script>
 	</head>
