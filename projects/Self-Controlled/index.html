@@ -1,157 +1,24 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<title>Self Control'd</title>
-		
-		<script type="text/javascript" src="js/Globals.js"></script>
-		<script type="text/javascript" src="js/Input.js"></script>
-		<script type="text/javascript" src="js/Player.js"></script>
-		<script type="text/javascript" src="js/Enemy.js"></script>
-		
-		<script type="text/javascript">
-		var mousePos;
-		
-		window.addEventListener('keyup', function(event)
-		{
-			Key.onKeyup(event);
-		}, false);
-		
-		window.addEventListener('keydown', function(event)
-		{
-			Key.onKeydown(event);
-		}, false);
-
-		window.addEventListener('mousemove', function(event)
-		{
-			mousePos = Mouse.getPosition(document.getElementById("478Canvas"), event);
-		}, false);
-		
-		window.addEventListener('click', function(event)
-		{
-			// var canvas = document.getElementById("478Canvas");
-			// var ctx = canvas.getContext("2d");
-// 			
-			// ctx.moveTo(0, 0);
-			// ctx.lineTo(mousePos.x, mousePos.y);
-			// ctx.stroke();
-		}, false);
-		
-		var Game =
-		{
-			fps : 60,
-			width : 800,
-			height : 600,
-			enemies : []
-		};
-
-		Game.onEachFrame = (function()
-		{
-			var requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-
-			if(requestAnimationFrame)
-			{
-				return function(cb)
-				{
-					var callB = function() 
-					{
-					  cb();
-					  requestAnimationFrame(callB);
-					}
-					callB();
-				};
-			}
-			else
-			{
-				return function(cb)
-				{
-					setInterval(cb, 1000 / Game.fps);
-				}
-			}
-		})();
-		
-		Game.start = function()
-		{
-			Game.canvas = document.getElementById("478Canvas");
-			Game.context = Game.canvas.getContext("2d");
-			
-			Game.player = new Player();
-			
-			Game.enemies.push(new Enemy());
-			Game.enemies.push(new Enemy());
-			Game.enemies.push(new Enemy());
-			
-			Game.onEachFrame(Game.run);
-		};
-		
-		Game.run = (function()
-		{
-			var loops = 0;
-			var skipTicks = 1000 / Game.fps;
-			var nextGameTick = (new Date).getTime();
-			
-			return function()
-			{
-				loops = 0;
-				
-				while ((new Date).getTime() > nextGameTick)
-				{
-					Game.update();
-					nextGameTick += skipTicks;
-					loops++;
-				}
-				
-				if (loops)
-					Game.draw();
-			}
-		})();
-		
-		Game.draw = function()
-		{
-			Game.context.clearRect(0, 0, Game.width, Game.height);
-			Game.player.draw(Game.context);
-			
-			Game.enemies.forEach(function(enemy)
-			{
-				enemy.draw(Game.context);
-			});
-		}
-		
-		Game.update = function() 
-		{
-	      Game.player.update();
-	      
-	      Game.enemies.forEach(function(enemy)
-	      {
-	      	enemy.update();
-	      });
-	      
-	      checkCollisions();
-	    };
-	    
-	    function collides(a, b) 
-		{			
-			return a.pos.x < b.x + b.width &&
-	            a.pos.x + a.width > b.pos.x &&
-	            a.pos.y < b.pos.y + b.height &&
-	            a.pos.y + a.height > b.pos.y;
-		}
-		
-		function checkCollisions()
-		{
-			Game.enemies.forEach(function(enemy) 
-			{
-			    if (collides(enemy, Game.player)) 
-			    {
-			      // Collision stuff!
-			      Game.enemies.splice(Game.enemies.indexOf(enemy), 1);
-			    }
-		  	});
-		}
-		</script>
-	</head>
-	
-	<body onload="Game.start()">
-		<canvas id="478Canvas" width="800" height="600"></canvas>
-	</body>
+    <head>
+        <title>Self Control'd</title>
+        
+        <script type="text/javascript" src="js/Globals.js"></script>
+        <script type="text/javascript" src="js/State.js"></script>
+        <script type="text/javascript" src="js/Platform.js"></script>
+        <script type="text/javascript" src="js/Input.js"></script>
+        <script type="text/javascript" src="js/Sprite.js"></script>
+        <script type="text/javascript" src="js/Player.js"></script>
+        <script type="text/javascript" src="js/Enemy.js"></script>
+        <script type="text/javascript" src="js/Game.js"></script>
+    </head>
+    
+    <body>
+                <div id="loading">Loading<span id="loadingPercent"></span>...</div>
+                <canvas id="478Canvas" width="800" height="600"></canvas><br>
+                <button onclick="Game.stop();">Stop</button>
+                <button onclick="Game.restart();">Start</button>
+                <script type="text/javascript" src="js/Load.js"></script>
+    </body>
 </html>
