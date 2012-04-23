@@ -59,26 +59,37 @@ Game.start = function() {
 
     Game.player = new Player();
 
-    Game.enemies.push(new Enemy());
-    Game.enemies.push(new Enemy());
-    Game.enemies.push(new Enemy());
+    var blankSprite = new Sprite(images.BeginningRoom, 800, 600);
+    var basicRoomSprite = new Sprite(images.RoomLong, 1200, 800);
+    basicRoomSprite.addAnimation("idle", 0, 1, 3);
+    basicRoomSprite.setAnimation("idle");
 
-    console.log(Game.enemies.top());
+    var beginningSound = new Audio("sound/chant.wav");    
 
-    // var state2sprite = new Sprite(images.BeginningRoom, 1600, 600);
-    // state2sprite.addAnimation("idle", 0, 3, 3);
-    // state2sprite.setAnimation("idle");
-    // Game.states.push(new State(state2sprite, 10000));
+    var beginningState = new SoundState(blankSprite, beginningSound);
 
-    var state1sprite = new Sprite(images.RoomBackground, 1600, 600);
-    state1sprite.addAnimation("idle", 0, 1, 3);
-    state1sprite.setAnimation("idle");
-    Game.states.push(new State(state1sprite, 10000));
-    Game.states.top().platforms.push(new Platform(44, 301, 185, 75));
-    Game.states.top().platforms.push(new Platform(571, 325, 196, 60));
-    Game.states.top().platforms.push(new Platform(332, 249, 144, 40));
+    var noEnemiesState = new TimedState(basicRoomSprite, 3000);
+    noEnemiesState.platforms.push(new Platform(44, 301, 185, 75));
+    noEnemiesState.platforms.push(new Platform(571, 325, 196, 60));
+    noEnemiesState.platforms.push(new Platform(332, 249, 144, 40));
+
+    var enemySpawnState = new CallbackState(basicRoomSprite, 10000,
+        function () {
+            Game.enemies.push(new Enemy());
+            Game.enemies.push(new Enemy());
+            Game.enemies.push(new Enemy());
+        });
+    enemySpawnState.platforms.push(new Platform(44, 301, 185, 75));
+    enemySpawnState.platforms.push(new Platform(571, 325, 196, 60));
+    enemySpawnState.platforms.push(new Platform(332, 249, 144, 40));
+
+    // States are a stack, so these happen in reverse order.
+    Game.states.push(enemySpawnState);
+    Game.states.push(noEnemiesState);
+    Game.states.push(beginningState);
 
     Game.onEachFrame(Game.run);
+    Game.states.top().start();
 };
 
 Game.stop = function() {
@@ -133,13 +144,6 @@ Game.update = function() {
 
     Game.states.top().sprite.animate(now);
 
-    if (Game.states.top().completed(now))
-    {
-        if (Game.states.length > 1) {
-            Game.states.pop();
-        }
-    }
-
     Game.enemies.forEach(function(enemy) {
         enemy.update();
     });
@@ -152,6 +156,14 @@ Game.update = function() {
     }
     Game.camy = Game.player.sprite.y;
     checkCollisions();
+
+    if (Game.states.top().completed(now))
+    {
+        if (Game.states.length > 1) {
+            Game.states.pop();
+            Game.states.top().start();
+        }
+    }
 };
 
 function collides(a, b) {
@@ -160,13 +172,6 @@ function collides(a, b) {
 }
 
 function checkCollisions() {
-    Game.enemies.forEach(function(enemy) {
-        if (collides(enemy, Game.player)) {
-            // Collision stuff!
-            Game.enemies.splice(Game.enemies.indexOf(enemy), 1);
-        }
-       });
-
     Game.states.top().platforms.forEach(function(platform) {
         if (collides(platform, Game.player)) {
             if (Game.player.sprite.y < platform.sprite.y) {
