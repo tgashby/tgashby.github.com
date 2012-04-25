@@ -1,9 +1,25 @@
-function Sprite(image, w, h) {
+function Sprite(image, w, h, colX, colY, colW, colH) {
     this.image = image;
     this.x = 0;
     this.y = 0;
     this.w = w;
     this.h = h;
+
+    this.colX = colX;
+    this.colY = colY;
+    this.colW = colW;
+    this.colH = colH;
+
+    this.colBox = {};
+    this.colBox["y0"] = colY;
+    this.colBox["y1"] = colY + .20 * colH;
+    this.colBox["y2"] = colY + .80 * colH;    
+    this.colBox["y3"] = colY + colH;
+    this.colBox["x0"] = colX;
+    this.colBox["x1"] = colX + .20 * colW;
+    this.colBox["x2"] = colX + .80 * colW;
+    this.colBox["x3"] = colX + colW;
+
     this.flip = false;
     this.cellsWide = this.image.naturalWidth / this.w;
     this.frame = 0;

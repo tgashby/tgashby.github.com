@@ -4,7 +4,7 @@ function Enemy() {
         y: 0
     }
     
-    this.sprite = new Sprite(images.Monster, 64, 64);
+    this.sprite = new Sprite(images.Monster, 64, 64, 16, 16, 32, 32);
     this.sprite.addAnimation("idle", 0, 5, 5);
     this.sprite.setAnimation("idle");
     

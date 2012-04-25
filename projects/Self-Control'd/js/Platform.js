@@ -1,6 +1,7 @@
 function Platform(x, y, width, height) {
     // Named with sprite for collision detection purposes
     this.sprite = {x: x, y: y, w: width, h: height};
+
 }
 
 Platform.prototype.draw = function(context) {
