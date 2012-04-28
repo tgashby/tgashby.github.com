@@ -6,6 +6,7 @@ function TimedState (sprite, duration) {
     this.lastUpdate = null;
 
     this.platforms = [];
+    this.ladders = [];
 }
 
 TimedState.prototype.start = function() {

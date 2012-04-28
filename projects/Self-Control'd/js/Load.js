@@ -12,7 +12,7 @@ images = {
 (function() {
     var loadCount = 0;
 
-    function imageLoaded() {
+    function assetLoaded() {
         var n = Object.keys(images).length;
         loadCount++;
 
@@ -29,6 +29,6 @@ images = {
         var url = images[name];
         images[name] = new Image();
         images[name].src = url;
-        images[name].onload = imageLoaded;
+        images[name].onload = assetLoaded;
     }
 })();

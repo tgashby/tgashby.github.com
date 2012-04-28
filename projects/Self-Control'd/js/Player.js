@@ -17,6 +17,11 @@ function Player() {
     this.sprite.y = Globals.FLOOR - this.sprite.h;
     
     this.moveTimer = 0;
+    this.onLadder = false;
+
+    this.sounds = {
+        cry : new Audio("sound/cry.wav")
+    }
 }
 
 Player.prototype.draw = function(context) {
@@ -46,22 +51,30 @@ Player.prototype.moveRight = function() {
 }
 
 Player.prototype.moveUp = function() {
+    if (this.onLadder && !this.haunted) {
+        this.sprite.y -= 4;
+    };
+}
+
+Player.prototype.jump = function() {
     if (this.canJump) {
         if (!this.jumping) {
             this.vel.y = -11;       
             this.jumping = true;
         }
         else if (this.vel.y < 0) {
-        	this.vel.y -= .5;
+            this.vel.y -= .5;
         }
         else if (this.vel.y > 0) {
-        	this.vel.y -= .3;
+            this.vel.y -= .3;
         }
     }
-}
+};
 
 Player.prototype.moveDown = function() {
-    this.sprite.y += 1;
+    if (this.onLadder && !this.haunted) {
+        this.sprite.y += 4;
+    }
 }
 
 Player.prototype.update = function() {
@@ -93,8 +106,14 @@ Player.prototype.update = function() {
     if (this.jumping)
         this.vel.y += this.gravity;
     
+    if (Key.isDown(Key.SPACE))
+        this.jump();
+
     if (Key.isDown(Key.UP))
         this.moveUp();
+
+    if (Key.isDown(Key.DOWN))
+        this.moveDown();
         
     if (Key.isDown(Key.LEFT)) {
         this.moveLeft();
@@ -123,6 +142,8 @@ Player.prototype.update = function() {
         if (this.sprite.currentAnim != "cry") {
             this.sprite.setAnimation("cry");
         };
+
+        this.sounds.cry.play();
     };
     
     this.sprite.x += this.vel.x;

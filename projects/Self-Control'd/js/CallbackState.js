@@ -6,6 +6,7 @@
     this.lastUpdate = null;
 
     this.platforms = [];
+    this.ladders = [];
 }
 
 CallbackState.prototype.start = function() {

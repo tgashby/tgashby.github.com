@@ -21,6 +21,18 @@ window.addEventListener('click', function(event) {
      // ctx.stroke();
 }, false);
 
+function placePlatforms(state) {
+    state.platforms.push(new Platform(33, 375, 185, 60));
+    state.platforms.push(new Platform(655, 490, 200, 40));
+    state.platforms.push(new Platform(250, 525, 174, 40));
+    state.platforms.push(new Platform(970, 580, 204, 50));
+    state.platforms.push(new Platform(490, 490, 90, 30));
+    state.platforms.push(new Platform(285, 225, 344, 50));
+    state.platforms.push(new Platform(720, 235, 240, 40));
+
+    state.ladders.push(new Ladder(655, 255, 50, 230));
+}
+
 var Game = {
      fps: 60,
      width: 800,
@@ -69,33 +81,76 @@ Game.start = function() {
     var beginningState = new SoundState(blankSprite, beginningSound);
 
     var noEnemiesState = new TimedState(basicRoomSprite, 3000);
-    noEnemiesState.platforms.push(new Platform(33, 375, 185, 60));
-    noEnemiesState.platforms.push(new Platform(655, 490, 200, 40));
-    noEnemiesState.platforms.push(new Platform(250, 525, 174, 40));
-    noEnemiesState.platforms.push(new Platform(970, 580, 204, 50));
-    noEnemiesState.platforms.push(new Platform(490, 490, 90, 30));
-    noEnemiesState.platforms.push(new Platform(285, 225, 344, 50));
-    noEnemiesState.platforms.push(new Platform(720, 235, 240, 40));
+    placePlatforms(noEnemiesState);
 
-    var enemySpawnState = new CallbackState(basicRoomSprite, 10000,
+    var randomEnemiesState = new CallbackState(basicRoomSprite, 10000,
         function () {
-            Game.enemies.push(new Enemy());
-            Game.enemies.push(new Enemy());
-            Game.enemies.push(new Enemy());
-            Game.enemies.push(new Enemy());
-            Game.enemies.push(new Enemy());
-            Game.enemies.push(new Enemy());
+            for (var i = 0; i < 6; i++) {
+                Game.enemies.push(new Enemy(Math.round(Math.random()*basicRoomSprite.w), 
+                    Math.round(Math.random()*basicRoomSprite.h), EnemyAI.randomMove));
+            };
         });
-    enemySpawnState.platforms.push(new Platform(33, 375, 185, 60));
-    enemySpawnState.platforms.push(new Platform(655, 490, 200, 40));
-    enemySpawnState.platforms.push(new Platform(250, 525, 174, 40));
-    enemySpawnState.platforms.push(new Platform(970, 580, 204, 50));
-    enemySpawnState.platforms.push(new Platform(490, 490, 90, 30));
-    enemySpawnState.platforms.push(new Platform(285, 225, 344, 50));
-    enemySpawnState.platforms.push(new Platform(720, 235, 240, 40));
+    placePlatforms(randomEnemiesState);
+
+    var getToMiddleState = new CallbackState(basicRoomSprite, 10000,
+        function () {
+            Game.enemies = new Array();
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i;
+                Game.enemies.push(enemy);
+            };
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i + 550;
+                Game.enemies.push(enemy);
+            };
+        });
+    placePlatforms(getToMiddleState);
+
+    var getToBottomState = new CallbackState(basicRoomSprite, 10000,
+        function () {
+            Game.enemies = new Array();
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i;
+                Game.enemies.push(enemy);
+            };
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i + 300;
+                Game.enemies.push(enemy);
+            };
+        });
+    placePlatforms(getToBottomState);
+
+    var getToTopState = new CallbackState(basicRoomSprite, 10000,
+        function () {
+            Game.enemies = new Array();
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i + 300;
+                Game.enemies.push(enemy);
+            };
+
+            for (var i = 0; i < 4; i++) {
+                var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
+                enemy.sprite.y = enemy.sprite.h * i + 550;
+                Game.enemies.push(enemy);
+            };
+        });
+    placePlatforms(getToTopState);
 
     // States are a stack, so these happen in reverse order.
-    Game.states.push(enemySpawnState);
+    Game.states.push(getToTopState);
+    Game.states.push(getToBottomState);
+    Game.states.push(getToMiddleState);
+    Game.states.push(randomEnemiesState);
     Game.states.push(noEnemiesState);
     Game.states.push(beginningState);
 
@@ -105,10 +160,6 @@ Game.start = function() {
 
 Game.stop = function() {
      Game.stopped = true;
-};
-
-Game.restart = function() {
-     Game.stopped = false;
 };
 
 Game.run = (function() {
@@ -134,6 +185,9 @@ Game.draw = function() {
      
      Game.states.top().platforms.forEach(function(platform) {
           platform.draw(Game.context);
+     });
+     Game.states.top().ladders.forEach(function(ladder) {
+          ladder.draw(Game.context);
      });
      Game.states.top().draw(Game.context);
      
@@ -216,19 +270,28 @@ function collideTile(a, b) {
         }
     }
     return landed;
-
-    // return a.sprite.x < b.sprite.x + b.sprite.w && a.sprite.x + a.sprite.w > b.sprite.x && a.sprite.y < b.sprite.y + 
-    //     b.sprite.h && a.sprite.y + a.sprite.h > b.sprite.y;
 };
 
+function boxToBoxCollision(a, b) {
+    return a.sprite.x < b.sprite.x + b.sprite.w && a.sprite.x + a.sprite.w > b.sprite.x && a.sprite.y < b.sprite.y + 
+         b.sprite.h && a.sprite.y + a.sprite.h > b.sprite.y;
+}
+
 function checkCollisions() {
-   var hasLanded = false;
-   Game.states.top().platforms.forEach(function(platform) {
+    var hasLanded = false;
+
+    Game.states.top().ladders.forEach(function(ladder) {
+        Game.player.onLadder = boxToBoxCollision(Game.player, ladder);
+    });
+
+
+    Game.states.top().platforms.forEach(function(platform) {
         if (collideTile(Game.player, platform)) {
-         hasLanded = true;
+            hasLanded = true;
         };
     });
-    if (!hasLanded) {
+
+    if (!hasLanded && !Game.player.onLadder) {
         Game.player.jumping = true;
     }
 };

@@ -11,6 +11,7 @@ function SoundState (sprite, sound) {
     }, false);
 
     this.platforms = [];
+    this.ladders = [];
 }
 
 SoundState.prototype.start = function() {
