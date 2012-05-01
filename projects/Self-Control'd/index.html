@@ -14,22 +14,33 @@
         <script type="text/javascript" src="js/Player.js"></script>
         <script type="text/javascript" src="js/Enemy.js"></script>
         <script type="text/javascript" src="js/Game.js"></script>
+
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
     </head>
     
     <body>
                 <div id="loading">Loading<span id="loadingPercent"></span>...</div>
-                <canvas id="478Canvas" width="800" height="600"></canvas><br>
+                <canvas id="478Canvas" width="800" height="600" style="position:relative"></canvas>
+                <canvas id="OverlayCanvas" width="800" height="600" style="position:absolute;top:0;left:0"></canvas>
+                <canvas id="OffscreenCanvas" width="800" height="600" style="display:none"></canvas>
+                <br>
+                <p id="frameRate">FPS</p>
                 <button onclick="Game.stop();">Stop</button>
                 <script type="text/javascript" src="js/Load.js"></script>
                 <div id="instructions">
                     Instructions:
                     <table border="1">
                         <tr>
-                            <td>A</td>
+                            <td>Left Arrow</td>
                             <td>Move Left</td>
                         </tr>
                         <tr>
-                            <td>D</td>
+                            <td>Right Arrow</td>
                             <td>Move Right</td>
                         </tr>
                         <tr>
@@ -37,11 +48,11 @@
                             <td>Jump</td>
                         </tr>
                         <tr>
-                            <td>W</td>
+                            <td>Up Arrow</td>
                             <td>Climb Up Ladders</td>
                         </tr>
                         <tr>
-                            <td>S</td>
+                            <td>Down Arrow</td>
                             <td>Climb Down Ladders</td>
                         </tr>
                     </table>

@@ -1,12 +1,13 @@
 images = {
+    "DamageOverlay": "img/DamageOverlay.png",
     "BadGuy": "img/BadGuy.png",
     "BillyHappy": "img/BillyHappy.png",
     "Billy": "img/Billy.png",
     "RoomBackground": "img/RoomBackground.png",
-    "RoomLong": "img/RoomLong.png",
     "BeginningRoom": "img/BeginningRoom.png",
     "Monster": "img/Monster.png",
-    "Door": "img/Door.png"
+    "Door": "img/Door.png",
+    "EndRoom": "img/EndRoom.png"
 };
 
 (function() {

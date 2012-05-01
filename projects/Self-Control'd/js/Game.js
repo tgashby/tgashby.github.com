@@ -1,24 +1,17 @@
 var mousePos;
 
 window.addEventListener('keyup', function(event) {
-     Key.onKeyup(event);
+     if (Key.onKeyup(event)) {
+         event.stopPropagation();
+         event.preventDefault();
+     }
 }, false);
 
 window.addEventListener('keydown', function(event) {
-     Key.onKeydown(event);
-}, false);
-
-window.addEventListener('mousemove', function(event) {
-     mousePos = Mouse.getPosition(document.getElementById("478Canvas"), event);
-}, false);
-
-window.addEventListener('click', function(event) {
-     // var canvas = document.getElementById("478Canvas");
-     // var ctx = canvas.getContext("2d");
-     //          
-     // ctx.moveTo(0, 0);
-     // ctx.lineTo(mousePos.x, mousePos.y);
-     // ctx.stroke();
+     if (Key.onKeydown(event)) {
+         event.stopPropagation();
+         event.preventDefault();
+     }
 }, false);
 
 function placePlatforms(state) {
@@ -30,7 +23,7 @@ function placePlatforms(state) {
     state.platforms.push(new Platform(285, 225, 344, 50));
     state.platforms.push(new Platform(720, 235, 240, 40));
 
-    state.ladders.push(new Ladder(655, 255, 50, 230));
+    state.ladders.push(new Ladder(655, 255, 50, 150));
 }
 
 var Game = {
@@ -65,22 +58,38 @@ Game.onEachFrame = (function() {
      }
 })();
 
+var lastFrameTime = Date.now();
+var frameRate = null;
+
 Game.start = function() {
     Game.canvas = document.getElementById("478Canvas");
     Game.context = Game.canvas.getContext("2d");
+    Game.overlayContext = document.getElementById("OverlayCanvas").getContext("2d");
+    Game.overlay = Game.overlayContext.createImageData(Game.width, Game.height);
+    Game.offscreenContext = document.getElementById("OffscreenCanvas").getContext("2d");
+    frameRate = document.getElementById("frameRate");
 
     Game.player = new Player();
 
     var blankSprite = new Sprite(images.BeginningRoom, 800, 600);
-    var basicRoomSprite = new Sprite(images.RoomLong, 1200, 800);
-    basicRoomSprite.addAnimation("idle", 0, 1, 3);
+    var endSprite = new Sprite(images.EndRoom, 4000, 600);
+
+    var basicRoomSprite = new Sprite(images.RoomBackground, 1200, 800);
+    basicRoomSprite.addAnimation("idle", 0, 3, 3);
     basicRoomSprite.setAnimation("idle");
 
-    var beginningSound = new Audio("sound/chant.wav");    
+    doorSprite = new Sprite(images.Door, 64, 128);
+    doorSprite.x = 4000 - doorSprite.w; // Put at end of last level
+    doorSprite.y = 600 - doorSprite.h; // Put at end of last level
+    doorSprite.addAnimation("idle", 0, 4, 4);
+    doorSprite.setAnimation("idle");
+    
+    var beginningSound = new Audio("sound/beginVO.ogg");
+    var firstRoomSound = new Audio("sound/roomVO.ogg");
 
     var beginningState = new SoundState(blankSprite, beginningSound);
 
-    var noEnemiesState = new TimedState(basicRoomSprite, 3000);
+    var noEnemiesState = new SoundState(basicRoomSprite, firstRoomSound);
     placePlatforms(noEnemiesState);
 
     var randomEnemiesState = new CallbackState(basicRoomSprite, 10000,
@@ -146,7 +155,13 @@ Game.start = function() {
         });
     placePlatforms(getToTopState);
 
+    var endState = new CallbackState(endSprite, 100000,
+        function() {
+            Game.enemies = new Array();
+        });
+
     // States are a stack, so these happen in reverse order.
+    Game.states.push(endState);
     Game.states.push(getToTopState);
     Game.states.push(getToBottomState);
     Game.states.push(getToMiddleState);
@@ -154,8 +169,9 @@ Game.start = function() {
     Game.states.push(noEnemiesState);
     Game.states.push(beginningState);
 
-    Game.onEachFrame(Game.run);
+    // Start the game!
     Game.states.top().start();
+    Game.onEachFrame(Game.run);
 };
 
 Game.stop = function() {
@@ -178,6 +194,10 @@ Game.run = (function() {
 })();
 
 Game.draw = function() {
+     var now = Date.now();
+     frameRate.innerText = (1 / (now - lastFrameTime) * 1000) + " FPS";
+     lastFrameTime = now;
+
      Game.context.clearRect(0, 0, Game.width, Game.height);
 
      Game.context.save();
@@ -190,8 +210,12 @@ Game.draw = function() {
           ladder.draw(Game.context);
      });
      Game.states.top().draw(Game.context);
-     
 
+     if (Game.states.length == 1) {
+        doorSprite.draw(Game.context);
+        doorSprite.animate(Date.now());
+     };
+     
      Game.player.draw(Game.context);
 
      Game.enemies.forEach(function(enemy) {
@@ -199,6 +223,34 @@ Game.draw = function() {
      });
 
      Game.context.restore();
+
+     // Draw overlay
+     Game.overlayContext.clearRect(0, 0, Game.width, Game.height);
+     Game.overlayContext.drawImage(images.DamageOverlay, 0, 0);
+     var spotRadius = 75.0;
+     var spotRadiusSqr = spotRadius*spotRadius;
+     var spotInnerRadius = spotRadius * 0.75;
+     var spotInnerRadiusSqr = spotInnerRadius*spotInnerRadius;
+     var spotCenter = {
+         x: Game.player.sprite.x + Game.player.sprite.w / 2 - Game.camx,
+         y: Game.player.sprite.y + Game.player.sprite.h / 2 - Game.camy
+     };
+     var region = Game.overlayContext.getImageData(spotCenter.x - spotRadius, spotCenter.y - spotRadius, spotRadius * 2, spotRadius * 2);
+     for (var y = 0; y < region.height; y++) {
+         for (var x = 0; x < region.width; x++) {
+             var i = (y*region.width+x)*4+3;
+             var dx = x - spotRadius;
+             var dy = y - spotRadius;
+             var distSqr = dx*dx + dy*dy;
+             if (distSqr < spotInnerRadiusSqr) {
+                 region.data[i] = 0;
+             } else if (distSqr < spotRadiusSqr) {
+                 var dist = Math.sqrt(distSqr);
+                 region.data[i] *= (dist - spotInnerRadius) / (spotRadius - spotInnerRadius);
+             }
+         }
+     }
+     Game.overlayContext.putImageData(region, spotCenter.x - spotRadius, spotCenter.y - spotRadius);
 };
 
 Game.update = function() {
@@ -273,8 +325,30 @@ function collideTile(a, b) {
 };
 
 function boxToBoxCollision(a, b) {
-    return a.sprite.x < b.sprite.x + b.sprite.w && a.sprite.x + a.sprite.w > b.sprite.x && a.sprite.y < b.sprite.y + 
-         b.sprite.h && a.sprite.y + a.sprite.h > b.sprite.y;
+    var landed = false;
+    if (a.sprite.x + a.sprite.colBox["x1"] < b.sprite.x + b.sprite.w && a.sprite.x + a.sprite.colBox["x2"] > b.sprite.x) {
+        if (a.sprite.y + a.sprite.colBox["y0"] > b.sprite.y && a.sprite.y + a.sprite.colBox["y0"] < b.sprite.y + b.sprite.h) {
+            landed = true;
+        }
+        else if (a.sprite.y + a.sprite.colBox["y3"] > b.sprite.y && a.sprite.y + a.sprite.colBox["y3"] < b.sprite.y + b.sprite.h) {
+            if (a.vel.y > 0) {
+                landed = true;
+            }
+        }
+        else if (a.sprite.y + a.sprite.colBox["y3"] == b.sprite.y) {
+            landed = true;
+        }
+    }
+
+    if (a.sprite.y + a.sprite.colBox["y1"] < b.sprite.y + b.sprite.h && a.sprite.y + a.sprite.colBox["y2"] > b.sprite.y) {
+        if (a.sprite.x + a.sprite.colBox["x0"] > b.sprite.x && a.sprite.x + a.sprite.colBox["x0"] < b.sprite.x + b.sprite.w) {
+            landed = true;
+        }
+        else if (a.sprite.x + a.sprite.colBox["x3"] > b.sprite.x && a.sprite.x + a.sprite.colBox["x3"] < b.sprite.x + b.sprite.w) {
+            landed = true;
+        }
+    }
+    return landed;
 }
 
 function checkCollisions() {

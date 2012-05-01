@@ -22,6 +22,12 @@ function Player() {
     this.sounds = {
         cry : new Audio("sound/cry.wav")
     }
+
+    var a = this;
+
+    this.sounds.cry.addEventListener('ended', function() {
+        a.crying = false;
+    }, false);
 }
 
 Player.prototype.draw = function(context) {
@@ -79,6 +85,10 @@ Player.prototype.moveDown = function() {
 
 Player.prototype.update = function() {
     this.moveTimer++;
+
+    if (this.crying) {
+        return;
+    };
     
     if (this.moveTimer > 60)
         this.moveTimer = 0;
@@ -137,13 +147,19 @@ Player.prototype.update = function() {
         if (this.sprite.currentAnim != "walk") {
             this.sprite.setAnimation("walk");
         }
-    } else {
+    } else if (!this.jumping) {
         this.vel.x = 0;
         if (this.sprite.currentAnim != "cry") {
             this.sprite.setAnimation("cry");
+            this.crying = true;
         };
 
         this.sounds.cry.play();
+    };
+
+    if (this.onLadder && (Key.isDown(Key.UP) || Key.isDown(Key.DOWN))) {
+        this.vel.y = 0;
+        this.jumping = false;
     };
     
     this.sprite.x += this.vel.x;
