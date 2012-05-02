@@ -107,6 +107,7 @@ Game.start = function() {
     placePlatforms(noEnemiesState);
 
     var enterMonstersState = new SoundState(basicRoomSprite, enterMonstersSound);
+    placePlatforms(enterMonstersState);
 
     var randomEnemiesState = new CallbackState(basicRoomSprite, 10000,
         function () {

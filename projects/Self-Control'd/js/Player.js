@@ -24,7 +24,8 @@ function Player() {
 
     this.sounds = {
         cry : new Audio("sound/cry.wav"),
-        firstCry : new Audio("sound/FirstCry.ogg")
+        firstCry : new Audio("sound/FirstCry.ogg"),
+        firstHurt : new Audio("sound/TwoHits.ogg")
     }
 
     var a = this;
