@@ -147,6 +147,7 @@ Game.start = function() {
             for (var i = 0; i < 4; i++) {
                 var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
                 enemy.sprite.y = enemy.sprite.h * i;
+                enemy.sprite.x = 230;
                 Game.enemies.push(enemy);
             };
 
