@@ -80,6 +80,8 @@ Game.start = function() {
 
     var blankSprite = new Sprite(images.BeginningRoom, 800, 600);
     var endSprite = new Sprite(images.EndRoom, 4000, 600);
+    endSprite.addAnimation("idle", 0, 1, 3);
+    endSprite.setAnimation("idle");
 
     var basicRoomSprite = new Sprite(images.RoomBackground, 1200, 800);
     basicRoomSprite.addAnimation("idle", 0, 3, 3);
@@ -87,12 +89,12 @@ Game.start = function() {
 
     doorSprite = new Sprite(images.Door, 64, 128);
     doorSprite.x = 4000 - doorSprite.w; // Put at end of last level
-    doorSprite.y = 600 - doorSprite.h; // Put at end of last level
+    doorSprite.y = 550 - doorSprite.h; // Put at end of last level
     doorSprite.addAnimation("idle", 0, 4, 4);
     doorSprite.setAnimation("idle");
     
-    var beginningSound = new Audio("sound/beginVO.ogg");
-    var firstRoomSound = new Audio("sound/roomVO.ogg");
+    var beginningSound = new Audio("sound/Intro.ogg");
+    var firstRoomSound = new Audio("sound/BoredBilly.ogg");
 
     var beginningState = new SoundState(blankSprite, beginningSound);
 
@@ -235,7 +237,11 @@ Game.draw = function() {
      Game.overlaySprite.animate(now);
      Game.overlayContext.clearRect(0, 0, Game.width, Game.height);
      if (Game.player.health < 100) {
+         if (Game.player.health > 50) {
+             Game.overlayContext.globalAlpha = 1 - (Game.player.health - 50) / 50;
+         }
          Game.overlaySprite.draw(Game.overlayContext);
+         Game.overlayContext.globalAlpha = 1.0;
          if (Game.player.health > 0) {
              var spotRadius = Game.player.health * 2 + 30;
              var spotRadiusSqr = spotRadius*spotRadius;
@@ -434,7 +440,7 @@ function checkCollisions() {
             MToTCollision(enemy, platform);
         });
         if (pToMCollision(Game.player, enemy)) {
-            Game.player.health -= 1;
+            Game.player.health -= 0.5;
         }
     });
 
