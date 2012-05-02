@@ -33,6 +33,7 @@ var Game = {
      enemies: new Array(),
      states: [],
      background: null,
+     overlaySprite: null,
      stopped: false,
      camx: 0,
      camy: 0
@@ -65,9 +66,11 @@ Game.start = function() {
     Game.canvas = document.getElementById("478Canvas");
     Game.context = Game.canvas.getContext("2d");
     Game.overlayContext = document.getElementById("OverlayCanvas").getContext("2d");
-    Game.overlay = Game.overlayContext.createImageData(Game.width, Game.height);
-    Game.offscreenContext = document.getElementById("OffscreenCanvas").getContext("2d");
     frameRate = document.getElementById("frameRate");
+
+    Game.overlaySprite = new Sprite(images.DamageOverlay, 800, 600);
+    Game.overlaySprite.addAnimation("idle", 0, 3, 4);
+    Game.overlaySprite.setAnimation("idle");
 
     Game.player = new Player();
 
@@ -213,7 +216,7 @@ Game.draw = function() {
 
      if (Game.states.length == 1) {
         doorSprite.draw(Game.context);
-        doorSprite.animate(Date.now());
+        doorSprite.animate(now);
      };
      
      Game.player.draw(Game.context);
@@ -225,32 +228,37 @@ Game.draw = function() {
      Game.context.restore();
 
      // Draw overlay
+     Game.overlaySprite.animate(now);
      Game.overlayContext.clearRect(0, 0, Game.width, Game.height);
-     Game.overlayContext.drawImage(images.DamageOverlay, 0, 0);
-     var spotRadius = 75.0;
-     var spotRadiusSqr = spotRadius*spotRadius;
-     var spotInnerRadius = spotRadius * 0.75;
-     var spotInnerRadiusSqr = spotInnerRadius*spotInnerRadius;
-     var spotCenter = {
-         x: Game.player.sprite.x + Game.player.sprite.w / 2 - Game.camx,
-         y: Game.player.sprite.y + Game.player.sprite.h / 2 - Game.camy
-     };
-     var region = Game.overlayContext.getImageData(spotCenter.x - spotRadius, spotCenter.y - spotRadius, spotRadius * 2, spotRadius * 2);
-     for (var y = 0; y < region.height; y++) {
-         for (var x = 0; x < region.width; x++) {
-             var i = (y*region.width+x)*4+3;
-             var dx = x - spotRadius;
-             var dy = y - spotRadius;
-             var distSqr = dx*dx + dy*dy;
-             if (distSqr < spotInnerRadiusSqr) {
-                 region.data[i] = 0;
-             } else if (distSqr < spotRadiusSqr) {
-                 var dist = Math.sqrt(distSqr);
-                 region.data[i] *= (dist - spotInnerRadius) / (spotRadius - spotInnerRadius);
+     if (Game.player.health < 100) {
+         Game.overlaySprite.draw(Game.overlayContext);
+         if (Game.player.health > 0) {
+             var spotRadius = Game.player.health * 2 + 30;
+             var spotRadiusSqr = spotRadius*spotRadius;
+             var spotInnerRadius = spotRadius - 10;
+             var spotInnerRadiusSqr = spotInnerRadius*spotInnerRadius;
+             var spotCenter = {
+                 x: Game.player.sprite.x + Game.player.sprite.w / 2 - Game.camx,
+                 y: Game.player.sprite.y + Game.player.sprite.h / 2 - Game.camy
+             };
+             var region = Game.overlayContext.getImageData(spotCenter.x - spotRadius, spotCenter.y - spotRadius, spotRadius * 2, spotRadius * 2);
+             for (var y = 0; y < region.height; y++) {
+                 for (var x = 0; x < region.width; x++) {
+                     var i = (y*region.width+x)*4+3;
+                     var dx = x - spotRadius;
+                     var dy = y - spotRadius;
+                     var distSqr = dx*dx + dy*dy;
+                     if (distSqr < spotInnerRadiusSqr) {
+                         region.data[i] = 0;
+                     } else if (distSqr < spotRadiusSqr) {
+                         var dist = Math.sqrt(distSqr);
+                         region.data[i] *= (dist - spotInnerRadius) / (spotRadius - spotInnerRadius);
+                     }
+                 }
              }
-         }
-     }
-     Game.overlayContext.putImageData(region, spotCenter.x - spotRadius, spotCenter.y - spotRadius);
+             Game.overlayContext.putImageData(region, spotCenter.x - spotRadius, spotCenter.y - spotRadius);
+        }
+    }
 };
 
 Game.update = function() {

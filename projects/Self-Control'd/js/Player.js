@@ -5,6 +5,7 @@ function Player() {
     }
     
     this.gravity = .8;
+    this.health = 100;
     
     this.jumping = false;
 
