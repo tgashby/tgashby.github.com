@@ -23,6 +23,28 @@ Enemy.prototype.draw = function(context){
 
 // Table for Enemy AIs
 var EnemyAI = {
+    vMove : function() {
+        var moveX = Math.floor(Math.random());
+        var moveY = Math.floor(Math.random());
+        
+        if (this.vel.x == 0) {
+            if (moveX == 1)
+                this.vel.x = 3;
+            else
+                this.vel.x = -3;
+        }
+        if (this.vel.y == 0) {
+            if (moveY == 1)
+                this.vel.y = 3;
+            else
+                this.vel.y = -3;
+        }
+
+        this.sprite.x += this.vel.x;
+        this.sprite.y += this.vel.y;
+        
+    },
+
     randomMove : function() {
         this.vel.x += Math.floor(Math.random() * 3) - 1;
         this.vel.y += Math.floor(Math.random() * 3) - 1;

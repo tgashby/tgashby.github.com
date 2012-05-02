@@ -15,6 +15,10 @@ window.addEventListener('keydown', function(event) {
 }, false);
 
 function placePlatforms(state) {
+    state.platforms.push(new Platform(state.sprite.x-10, state.sprite.y, 10, state.sprite.h));
+    state.platforms.push(new Platform(state.sprite.w, state.sprite.y, 10, state.sprite.h));
+    state.platforms.push(new Platform(state.sprite.x, state.sprite.y-10, state.sprite.w, 10));
+    state.platforms.push(new Platform(state.sprite.x, state.sprite.h- 40, state.sprite.w, 10));
     state.platforms.push(new Platform(33, 375, 185, 60));
     state.platforms.push(new Platform(655, 490, 200, 40));
     state.platforms.push(new Platform(250, 525, 174, 40));
@@ -99,7 +103,7 @@ Game.start = function() {
         function () {
             for (var i = 0; i < 6; i++) {
                 Game.enemies.push(new Enemy(Math.round(Math.random()*basicRoomSprite.w), 
-                    Math.round(Math.random()*basicRoomSprite.h), EnemyAI.randomMove));
+                    Math.round(Math.random()*basicRoomSprite.h), EnemyAI.vMove));
             };
         });
     placePlatforms(randomEnemiesState);
@@ -359,9 +363,55 @@ function boxToBoxCollision(a, b) {
     return landed;
 }
 
+function pToMCollision(a, b) {
+    var beenHit = false;
+    if (a.sprite.x + a.sprite.colBox["x1"] < b.sprite.x + b.sprite.colBox["x3"] && a.sprite.x + a.sprite.colBox["x2"] > b.sprite.x + b.sprite.colBox["x0"]) {
+        if (a.sprite.y + a.sprite.colBox["y0"] > b.sprite.y + b.sprite.colBox["y0"] && a.sprite.y + a.sprite.colBox["y0"] < b.sprite.y + b.sprite.colBox["y3"]) {
+            beenHit = true;
+        }
+        else if (a.sprite.y + a.sprite.colBox["y3"] > b.sprite.y + b.sprite.colBox["y0"] && a.sprite.y + a.sprite.colBox["y3"] < b.sprite.y + b.sprite.colBox["y3"]) {
+            beenHit = true;
+        }
+    }
+
+    if (a.sprite.y + a.sprite.colBox["y1"] < b.sprite.y + b.sprite.colBox["y3"] && a.sprite.y + a.sprite.colBox["y2"] > b.sprite.y + b.sprite.colBox["y0"]) {
+        if (a.sprite.x + a.sprite.colBox["x0"] > b.sprite.x + b.sprite.colBox["x0"] && a.sprite.x + a.sprite.colBox["x0"] < b.sprite.x + b.sprite.colBox["x3"]) {
+            beenHit = true;
+        }
+        else if (a.sprite.x + a.sprite.colBox["x3"] > b.sprite.x + b.sprite.colBox["x0"] && a.sprite.x + a.sprite.colBox["x3"] < b.sprite.x + b.sprite.colBox["x3"]) {
+            beenHit = true;
+        }
+    }
+    return beenHit;
+};
+
+function MToTCollision(a, b) {
+    if (a.sprite.x + a.sprite.colBox["x1"] < b.sprite.x + b.sprite.w && a.sprite.x + a.sprite.colBox["x2"] > b.sprite.x) {
+        if (a.sprite.y + a.sprite.colBox["y0"] > b.sprite.y && a.sprite.y + a.sprite.colBox["y0"] < b.sprite.y + b.sprite.h) {
+            a.sprite.y = b.sprite.y + b.sprite.h - a.sprite.colY;
+            a.vel.y = -1 * a.vel.y;           
+        }
+        else if (a.sprite.y + a.sprite.colBox["y3"] > b.sprite.y && a.sprite.y + a.sprite.colBox["y3"] < b.sprite.y + b.sprite.h) {
+            a.sprite.y = b.sprite.y - a.sprite.colBox["y3"];
+            a.vel.y = -1 * a.vel.y;
+        }
+    }
+
+    if (a.sprite.y + a.sprite.colBox["y1"] < b.sprite.y + b.sprite.h && a.sprite.y + a.sprite.colBox["y2"] > b.sprite.y) {
+        if (a.sprite.x + a.sprite.colBox["x0"] > b.sprite.x && a.sprite.x + a.sprite.colBox["x0"] < b.sprite.x + b.sprite.w) {
+            a.sprite.x = b.sprite.x + b.sprite.w - a.sprite.colX;
+            a.vel.x = -1 * a.vel.x;
+        }
+        else if (a.sprite.x + a.sprite.colBox["x3"] > b.sprite.x && a.sprite.x + a.sprite.colBox["x3"] < b.sprite.x + b.sprite.w) {
+            a.sprite.x = b.sprite.x - a.sprite.colBox["x3"]; 
+            a.vel.x = -1 * a.vel.x;
+        }
+    }
+};
+
 function checkCollisions() {
     var hasLanded = false;
-
+    var beenHit;
     Game.states.top().ladders.forEach(function(ladder) {
         Game.player.onLadder = boxToBoxCollision(Game.player, ladder);
     });
@@ -371,6 +421,21 @@ function checkCollisions() {
         if (collideTile(Game.player, platform)) {
             hasLanded = true;
         };
+    });
+
+    Game.states.top().platforms.forEach(function(platform) {
+        if (collideTile(Game.player, platform)) {
+            hasLanded = true;
+        };
+    });
+
+    Game.enemies.forEach(function(enemy) {
+        Game.states.top().platforms.forEach(function(platform) {
+            MToTCollision(enemy, platform);
+        });
+        if (pToMCollision(Game.player, enemy)) {
+            Game.player.health -= 1;
+        }
     });
 
     if (!hasLanded && !Game.player.onLadder) {
