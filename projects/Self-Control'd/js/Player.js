@@ -19,15 +19,28 @@ function Player() {
     
     this.moveTimer = 0;
     this.onLadder = false;
+    this.firstCry = true;
+    this.firstHurt = true;
 
     this.sounds = {
-        cry : new Audio("sound/cry.wav")
+        cry : new Audio("sound/cry.wav"),
+        firstCry : new Audio("sound/FirstCry.ogg")
     }
 
     var a = this;
 
     this.sounds.cry.addEventListener('ended', function() {
         a.crying = false;
+
+        if (a.firstCry) {
+            a.sounds.firstCry.play();
+            a.firstCry = false;
+        };
+
+        if (a.health < 50 && a.firstHurt && !a.firstCry) {
+            a.sounds.firstHurt.play();
+            a.firstHurt = false;
+        };
     }, false);
 }
 

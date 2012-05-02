@@ -95,11 +95,18 @@ Game.start = function() {
     
     var beginningSound = new Audio("sound/Intro.ogg");
     var firstRoomSound = new Audio("sound/BoredBilly.ogg");
+    var enterMonstersSound = new Audio("sound/MonstersIntro.ogg");
 
     var beginningState = new SoundState(blankSprite, beginningSound);
 
-    var noEnemiesState = new SoundState(basicRoomSprite, firstRoomSound);
+    var boredState = new TimedState(blankSprite, 5000);
+
+    var enterRoomState = new SoundState(blankSprite, firstRoomSound);
+
+    var noEnemiesState = new TimedState(basicRoomSprite, 6000);
     placePlatforms(noEnemiesState);
+
+    var enterMonstersState = new SoundState(basicRoomSprite, enterMonstersSound);
 
     var randomEnemiesState = new CallbackState(basicRoomSprite, 10000,
         function () {
@@ -175,7 +182,10 @@ Game.start = function() {
     Game.states.push(getToBottomState);
     Game.states.push(getToMiddleState);
     Game.states.push(randomEnemiesState);
+    Game.states.push(enterMonstersState);
     Game.states.push(noEnemiesState);
+    Game.states.push(enterRoomState);
+    Game.states.push(boredState);
     Game.states.push(beginningState);
 
     // Start the game!
