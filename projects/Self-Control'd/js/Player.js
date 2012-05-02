@@ -37,11 +37,6 @@ function Player() {
             a.sounds.firstCry.play();
             a.firstCry = false;
         };
-
-        if (a.health < 50 && a.firstHurt && !a.firstCry) {
-            a.sounds.firstHurt.play();
-            a.firstHurt = false;
-        };
     }, false);
 }
 
@@ -103,6 +98,11 @@ Player.prototype.update = function() {
 
     if (this.crying) {
         return;
+    };
+
+    if (this.health < 70 && this.firstHurt && !this.firstCry) {
+        this.sounds.firstHurt.play();
+        this.firstHurt = false;
     };
     
     if (this.moveTimer > 60)

@@ -103,7 +103,11 @@ Game.start = function() {
 
     var enterRoomState = new SoundState(blankSprite, firstRoomSound);
 
-    var noEnemiesState = new TimedState(basicRoomSprite, 6000);
+    var noEnemiesState = new CallbackState(basicRoomSprite, 6000,
+        function () {
+            Game.player.sprite.x = 0;
+            Game.player.sprite.y = 600 - Game.player.sprite.h;
+        });
     placePlatforms(noEnemiesState);
 
     var enterMonstersState = new SoundState(basicRoomSprite, enterMonstersSound);
@@ -128,7 +132,7 @@ Game.start = function() {
                 Game.enemies.push(enemy);
             };
 
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 3; i++) {
                 var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
                 enemy.sprite.y = enemy.sprite.h * i + 550;
                 Game.enemies.push(enemy);
@@ -164,7 +168,7 @@ Game.start = function() {
                 Game.enemies.push(enemy);
             };
 
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 3; i++) {
                 var enemy = new Enemy(0, 0, EnemyAI.backAndForth);
                 enemy.sprite.y = enemy.sprite.h * i + 550;
                 Game.enemies.push(enemy);
