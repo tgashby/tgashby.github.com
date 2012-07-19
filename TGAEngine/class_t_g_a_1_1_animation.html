@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_animation.html','');})
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_animation.html','');})
 <div class="title">TGA::Animation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a single animation, a collection of individual frames.  
+ <a href="class_t_g_a_1_1_animation.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_animation_8h_source.html">Animation.h</a>&gt;</code></p>
 
@@ -133,13 +136,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d4f23cfd66ed4cbb171e893acd3f38d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#a3d4f23cfd66ed4cbb171e893acd3f38d">setFrameBounds</a> (GLuint frame, SDL_Rect newBounds)</td></tr>
 <tr class="memitem:ab65b0ad281e49f02db8f98370bc40057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#ab65b0ad281e49f02db8f98370bc40057">draw</a> (GLfloat xPos, GLfloat yPos)</td></tr>
 <tr class="memitem:a793fca86cc7b0becc9121302a7abd303"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#a793fca86cc7b0becc9121302a7abd303">getFrameCount</a> ()</td></tr>
+<tr class="memitem:a0d347363365cec60eda355ccca50242a"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#a0d347363365cec60eda355ccca50242a">getCurrentFrameDimensions</a> ()</td></tr>
 <tr class="memitem:a974ae129c220b39756d892979d46b8be"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#a974ae129c220b39756d892979d46b8be">printFrames</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a00b7f00c1e25e81e518e5faa334dbe66"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation.html#a00b7f00c1e25e81e518e5faa334dbe66">AnimationManager</a></td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Represents a single animation, a collection of individual frames. </p>
+<p>Animations come with a large number of methods for manipulating their frames and playing themselves. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae69c52cffb32d46424097d9d2c322f42"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +159,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a></p>
+<p>Constructs an empty animation. (No associated image.) </p>
 
 </div>
 </div>
@@ -168,6 +177,14 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a></p>
+<p>Constructs an <a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a> with the given <a class="el" href="class_t_g_a_1_1_texture.html" title="Represents a texture (image)">Texture</a> (image). </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_t_g_a_1_1_texture.html" title="Represents a texture (image)">Texture</a></td><td>* texture - a pointer to an image containing the frames. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -183,6 +200,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>~Animation</p>
+<p>Unused destructor. All deallocation is handled by the <a class="el" href="class_t_g_a_1_1_animation_manager.html" title="Manages all Animations. Animations are automatically added to the manager upon creation.">AnimationManager</a>. </p>
 
 </div>
 </div>
@@ -210,6 +229,17 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      addFrame
+
+      Adds a frame to the animation given the dimensions and amount of time 
+</pre><p> it should play. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SDL_Rect</td><td>frameRect - A rectangle encompassing the frame in the image. </td></tr>
+    <tr><td class="paramname">Uint32</td><td>delay - The amount of time the frame should be shown for. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,6 +255,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>clearFrames</p>
+<p>Removes all frames from the animation, leaving it empty. </p>
 
 </div>
 </div>
@@ -241,6 +273,14 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>deleteFrame</p>
+<p>Removes the frame at the given index from the animation. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLuint</td><td>frameNum - the index (0-based) of the frame to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -256,6 +296,10 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      deleteMe
+
+      Tells the AnimationManager to no longer handle this animation.
+</pre><p> Takes care of all deallocation and removing it from the <a class="el" href="class_t_g_a_1_1_animation_manager.html" title="Manages all Animations. Animations are automatically added to the manager upon creation.">AnimationManager</a> </p>
 
 </div>
 </div>
@@ -282,6 +326,33 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>draw</p>
+<p>Draws the current frame at the specified position. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLfloat</td><td>xPos - the x position of the point at which to draw. </td></tr>
+    <tr><td class="paramname">GLfloat</td><td>yPos - the y position of the point at which to draw. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d347363365cec60eda355ccca50242a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect TGA::Animation::getCurrentFrameDimensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_animation.html#a0d347363365cec60eda355ccca50242a">getCurrentFrameDimensions()</a></p>
+<p>Gets the current frame's dimensions </p>
+<dl class="section return"><dt>Returns:</dt><dd>SDL_Rect - the rectangle determining it's position and dimensions </dd></dl>
 
 </div>
 </div>
@@ -297,6 +368,9 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>getFrameCount</p>
+<p>Gets the total number of frames for the <a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a>. </p>
+<dl class="section return"><dt>Returns:</dt><dd>GLuint - the number of frames in the <a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a>. </dd></dl>
 
 </div>
 </div>
@@ -313,6 +387,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      goToFrame
+
+      Sets the currently visible frame to the one specified by the
+</pre><p> given index. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLuint</td><td>frame - the index (0-based) of the frame to show. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -328,6 +412,11 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      isDone
+
+      Determines whether or not the animation has played its set number of times.
+      @return bool - true if the animation will not play any more, false if the animation
+</pre><p> is still playing, or would still play if resumed. </p>
 
 </div>
 </div>
@@ -343,6 +432,9 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>isPaused</p>
+<p>Determines whether or not the animation is paused. </p>
+<dl class="section return"><dt>Returns:</dt><dd>bool - true is the animation is paused, false if it isn't. </dd></dl>
 
 </div>
 </div>
@@ -358,6 +450,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>pause</p>
+<p>Pauses the current animation stopping it from being updated. </p>
 
 </div>
 </div>
@@ -373,6 +467,12 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      printFrames
+
+      Creates a pretty representation of each frame with the
+</pre><p> important information for that frame. Format of a single entry: Frame: # X: # Y: # Width: # Height: # Delay: # </p>
+<pre class="fragment">      @return std::string - the series of entries, one for each frame, in the format
+</pre><p> listed above </p>
 
 </div>
 </div>
@@ -388,6 +488,10 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      reset
+
+      Sets the current frame back to the beginning frame and resumes the animation.
+</pre> <dl class="section warning"><dt>Warning:</dt><dd>Does not reset the number of times the animation will play. If it is set to play 3 times and it's already played 2, it will only play once more. </dd></dl>
 
 </div>
 </div>
@@ -403,6 +507,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>resume</p>
+<p>Resumes a paused animation, allowing it to once again be updated. </p>
 
 </div>
 </div>
@@ -429,6 +535,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>setDelay</p>
+<p>Sets the amount of time a frame is shown. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLuint</td><td>frame - the index (0-based) of the frame to change. </td></tr>
+    <tr><td class="paramname">Uint32</td><td>delay - the new amount of time to show the frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -455,6 +570,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>setFrameBounds</p>
+<p>Sets the position and dimensions of a frame on the image. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLuint</td><td>frame - the index (0-based) of the frame to change. </td></tr>
+    <tr><td class="paramname">SDL_Rect</td><td>newBounds - the new dimensions of the frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -471,6 +595,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      setRepetitions
+
+      Sets the number of times the animation should play. If the animation
+</pre><p> had already finished, it starts the animation over again. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>repetitions - the number of times to play the animation. -1 for indefinitely </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -487,6 +621,16 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      setTexture
+
+      Sets the image to use as the basis for the animation. Especially important if
+</pre><p> the <a class="el" href="class_t_g_a_1_1_animation.html" title="Represents a single animation, a collection of individual frames.">Animation</a> was created with the empty constructor. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_t_g_a_1_1_texture.html" title="Represents a texture (image)">Texture</a></td><td>* texture - the pointer to a <a class="el" href="class_t_g_a_1_1_texture.html" title="Represents a texture (image)">Texture</a> to use as the image </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -502,6 +646,13 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      update
+
+      Makes sure the animation is progressing appropriately.
+</pre><ul>
+<li>Checks to make sure the animation isn't playing more times than desired</li>
+<li>Updates the current frame if needed </li>
+</ul>
 
 </div>
 </div>
@@ -535,7 +686,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_animation.html">Animation</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

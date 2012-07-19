@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_animation_manager.html
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_animation_manager.html
 <div class="title">TGA::AnimationManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages all Animations. Animations are automatically added to the manager upon creation.  
+ <a href="class_t_g_a_1_1_animation_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>&gt;</code></p>
 
@@ -136,7 +139,10 @@ Protected Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:af47625f50036c466946f960db7320bcf"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_animation_manager.html#af47625f50036c466946f960db7320bcf">Animation</a></td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Manages all Animations. Animations are automatically added to the manager upon creation. </p>
+<p><a class="el" href="class_t_g_a_1_1_animation_manager.html" title="Manages all Animations. Animations are automatically added to the manager upon creation.">AnimationManager</a> is one of the <a class="el" href="class_t_g_a_1_1_singleton.html" title="Handles Singleton instances of classes.">Singleton</a> Managers </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aab1f778c38d90bc23c2e189c84dae222"></a>
 <div class="memitem">
 <div class="memproto">
@@ -149,6 +155,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_animation_manager.html" title="Manages all Animations. Animations are automatically added to the manager upon creation.">AnimationManager</a></p>
+<p>Constructor, clears animations. </p>
 
 </div>
 </div>
@@ -164,6 +172,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>~AnimationManager</p>
+<p>Removes all animations and deallocates them. Calls <a class="el" href="class_t_g_a_1_1_animation_manager.html#a64c6c2bafcdb984e0d11b3f49f999600">removeAll()</a> </p>
 
 </div>
 </div>
@@ -204,6 +214,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>pauseAll</p>
+<p>Pauses (<a class="el" href="class_t_g_a_1_1_animation.html#a30aa64c97660730188e1cfb29894fdac">Animation.pause()</a>) every animation in the list. </p>
 
 </div>
 </div>
@@ -219,6 +231,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>removeAll</p>
+<p>Removes every animation from the list and deallocates them. </p>
 
 </div>
 </div>
@@ -258,6 +272,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>resetAll</p>
+<p>Resets (<a class="el" href="class_t_g_a_1_1_animation.html#aa0acf3ef91121bc4d3b1a83680050147">Animation.reset()</a>) all animations in the list </p>
 
 </div>
 </div>
@@ -273,6 +289,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>resumeAll</p>
+<p>Resumes (<a class="el" href="class_t_g_a_1_1_animation.html#abf796ec036dcf66157909f3db1cad195">Animation.resume()</a>) every animation in the list. </p>
 
 </div>
 </div>
@@ -288,6 +306,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>updateAll</p>
+<p>Updates (<a class="el" href="class_t_g_a_1_1_animation.html#ad5544857164746b89e44314dd3648501">Animation.update()</a>) all animations in the list. </p>
 
 </div>
 </div>
@@ -342,7 +362,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_animation_manager.html">AnimationManager</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

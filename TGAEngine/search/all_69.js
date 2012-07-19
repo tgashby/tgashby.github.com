@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['init',['init',['../class_t_g_a_1_1_app.html#a480ac386add0970faf706b9f4cd9ddee',1,'TGA::App::init()'],['../class_t_g_a_1_1_graphics_manager.html#a2686b9905bffe20a237f33dd2a2194dc',1,'TGA::GraphicsManager::init()']]],
-  ['initalize',['Initalize',['../class_t_g_a_1_1_engine.html#a3c6e68ea25002e6f152116607f2b425a',1,'TGA::Engine']]],
+  ['id',['id',['../class_t_g_a_1_1_collidable.html#a24cb5224b01b50f2b2103a6a407eed17',1,'TGA::Collidable']]],
+  ['init',['init',['../class_t_g_a_1_1_graphics_manager.html#a9a880f24c316ed8a198d4ed0f8372d1f',1,'TGA::GraphicsManager']]],
   ['input',['Input',['../class_t_g_a_1_1_engine.html#a99ee6dd54f1c4c664536427f3209895c',1,'TGA::Engine']]],
   ['inputmanager',['InputManager',['../class_t_g_a_1_1_input_manager.html#aface81edf0a2ffa0cbac7b7f3cfebde6',1,'TGA::InputManager']]],
   ['inputmanager',['InputManager',['../class_t_g_a_1_1_input_manager.html',1,'TGA']]],

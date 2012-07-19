@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_texture_manager.html',
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_texture_manager.html',
 <div class="title">TGA::TextureManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages all textures. Textures are automatically added to the manager upon creation.  
+ <a href="class_t_g_a_1_1_texture_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a>&gt;</code></p>
 
@@ -133,7 +136,10 @@ Protected Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:af7f909106d08e36cd50aa58e36f9bf47"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_texture_manager.html#af7f909106d08e36cd50aa58e36f9bf47">Texture</a></td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Manages all textures. Textures are automatically added to the manager upon creation. </p>
+<p><a class="el" href="class_t_g_a_1_1_texture_manager.html" title="Manages all textures. Textures are automatically added to the manager upon creation.">TextureManager</a> is a collection of all textures. It will be a <a class="el" href="class_t_g_a_1_1_singleton.html" title="Handles Singleton instances of classes.">Singleton</a> along with the other managers. <a class="el" href="class_t_g_a_1_1_texture_manager.html" title="Manages all textures. Textures are automatically added to the manager upon creation.">TextureManager</a> is used to act on all Textures at once so that the developer need not keep track of them all. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad5f2a32d49ef504b8210c69f1b5faf1f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -146,6 +152,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_texture_manager.html" title="Manages all textures. Textures are automatically added to the manager upon creation.">TextureManager</a></p>
+<p>Creates a <a class="el" href="class_t_g_a_1_1_texture_manager.html" title="Manages all textures. Textures are automatically added to the manager upon creation.">TextureManager</a> and clears out all textures. </p>
 
 </div>
 </div>
@@ -161,6 +169,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>~TextureManager</p>
+<p>Deallocates and cleans up all textures. </p>
 
 </div>
 </div>
@@ -201,6 +211,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>removeAllTextures</p>
+<p>Deallocates and cleans up all textures. Called by destructor. </p>
 
 </div>
 </div>
@@ -240,6 +252,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">      resetTextures
+</pre><p>Reset all textures, useful after a screen resize </p>
 
 </div>
 </div>
@@ -294,7 +308,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_texture_manager.html">TextureManager</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

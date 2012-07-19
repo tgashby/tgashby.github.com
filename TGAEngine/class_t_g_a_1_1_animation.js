@@ -8,6 +8,7 @@ var class_t_g_a_1_1_animation =
     [ "deleteFrame", "class_t_g_a_1_1_animation.html#a318676239c4bc0fe7646ca05f5693b18", null ],
     [ "deleteMe", "class_t_g_a_1_1_animation.html#ae30a28207938e156a6d9d46648568c92", null ],
     [ "draw", "class_t_g_a_1_1_animation.html#ab65b0ad281e49f02db8f98370bc40057", null ],
+    [ "getCurrentFrameDimensions", "class_t_g_a_1_1_animation.html#a0d347363365cec60eda355ccca50242a", null ],
     [ "getFrameCount", "class_t_g_a_1_1_animation.html#a793fca86cc7b0becc9121302a7abd303", null ],
     [ "goToFrame", "class_t_g_a_1_1_animation.html#a3c434c9de647072f91ad241e7fb6c7e1", null ],
     [ "isDone", "class_t_g_a_1_1_animation.html#ac27afb792e8f32ddffddd98b837e18f0", null ],

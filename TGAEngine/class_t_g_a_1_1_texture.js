@@ -10,6 +10,6 @@ var class_t_g_a_1_1_texture =
     [ "getHeight", "class_t_g_a_1_1_texture.html#a44ec721db24b82ef122fba63b2598e51", null ],
     [ "getWidth", "class_t_g_a_1_1_texture.html#aa781eac52dbc785f3e4c113b966c872b", null ],
     [ "loadTexture", "class_t_g_a_1_1_texture.html#a8fabe7e8e7da9e90ade5641863fb4a1d", null ],
-    [ "reset", "class_t_g_a_1_1_texture.html#a9e99a90287058b56220c5962f35bba55", null ],
+    [ "reset", "class_t_g_a_1_1_texture.html#af74c0f814a2ada72fdb5f199db506576", null ],
     [ "TextureManager", "class_t_g_a_1_1_texture.html#a7ca6a28bb7270258b027ed224b74ec24", null ]
 ];

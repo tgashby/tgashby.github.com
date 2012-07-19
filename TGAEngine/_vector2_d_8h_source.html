@@ -66,6 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -87,7 +88,7 @@ $(document).ready(function(){initNavTree('_vector2_d_8h.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,39 +102,54 @@ $(document).ready(function(){initNavTree('_vector2_d_8h.html','');});
 <div class="title">Vector2D.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_vector2_d_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>TGA</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_vector2_d.html">    5</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html#adba4c91572afb5a5310f48b6ac0633e7">Vector2D</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html#a2f4fea3a47be965a0860bb1970e26232">~Vector2D</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a17f9ea2c3b3946f9925a81fc42957959">operator+</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a95dea479e58afce3e0ef28984edd5a2c">operator-</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#af664c4e824bffd438270027933957922">scalarProduct</a>(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a35928e049531ffdd5bd42cf2f5bf6cf4">normalize</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#aa7f24c84e97d1cf74c77541ec4f7d4c9">dotProduct</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#af076a75c4d8738a1eb51999c36ba1923">length</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a62fc8b33f16d7c1b5503a8190c057964">distanceFrom</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html">Vector2D</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#aa83888a6d377cc6797c00131eb472f4f">getX</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#ad68d43529c8fe265cbc587c8e8837b6a">getY</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordtype">float</span> x, y;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<a href="_vector2_d_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>TGA</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_vector2_d.html">   20</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html#adba4c91572afb5a5310f48b6ac0633e7">Vector2D</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html#a4f84369733942a91bce5f1dc0ba41ae8">~Vector2D</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>&amp; <a class="code" href="class_t_g_a_1_1_vector2_d.html#a28e961f28bc378b0b7cb8f075fc642b8">operator+=</a>(<span class="keyword">const</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a17f9ea2c3b3946f9925a81fc42957959">operator+</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>&amp; <a class="code" href="class_t_g_a_1_1_vector2_d.html#ad0599d146e61095e514f0d24d7295a7f">operator-=</a>(<span class="keyword">const</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a95dea479e58afce3e0ef28984edd5a2c">operator-</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#af664c4e824bffd438270027933957922">scalarProduct</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a35928e049531ffdd5bd42cf2f5bf6cf4">normalize</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#aa7f24c84e97d1cf74c77541ec4f7d4c9">dotProduct</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#af076a75c4d8738a1eb51999c36ba1923">length</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#a62fc8b33f16d7c1b5503a8190c057964">distanceFrom</a>(<a class="code" href="class_t_g_a_1_1_vector2_d.html" title="Represents a 2 dimensional math vector.">Vector2D</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#aa83888a6d377cc6797c00131eb472f4f">getX</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordtype">float</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#ad68d43529c8fe265cbc587c8e8837b6a">getY</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#af82970d64113f5159289cf0dc2e97444">setX</a>(<span class="keywordtype">float</span> x);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_vector2_d.html#aba78f01d14a5f48e11939f1526387d9d">setY</a>(<span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordtype">float</span> x, y;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        };</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6140f7f607ed05be60e2d98f7377c09d.html">TGAEngine</a></li><li class="navelem"><a class="el" href="dir_54bc49bd31ad39b211b5f946a1f4e00b.html">include</a></li><li class="navelem"><a class="el" href="_vector2_d_8h.html">Vector2D.h</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>
