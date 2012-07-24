@@ -51,6 +51,7 @@ var _key_8h =
       [ "key_F10", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba7a613b6d367985871af97ba3e530ef9c", null ],
       [ "key_F11", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba4a972f0ccc5bf9527cc9f97e464b56d0", null ],
       [ "key_F12", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba30462f314559baa7871f6cfc87d8fa88", null ],
-      [ "key_BACKQUOTE", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba2d571abf44a3f86e199a1a19d7dd97a1", null ]
+      [ "key_BACKQUOTE", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba2d571abf44a3f86e199a1a19d7dd97a1", null ],
+      [ "key_ESC", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba715dc05512996044acbf3751a48aa2cd", null ]
     ] ]
 ];

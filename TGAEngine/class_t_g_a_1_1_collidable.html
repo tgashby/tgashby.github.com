@@ -116,18 +116,34 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_collidable.html','');}
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa134d9b68e910e5d618745a2a99d471c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#aa134d9b68e910e5d618745a2a99d471c">Collidable</a> (<a class="el" href="class_t_g_a_1_1_bounding_box.html">BoundingBox</a> b)</td></tr>
 <tr class="memitem:a91dcc78a402507ad0dbbb32a67ba4fb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#a91dcc78a402507ad0dbbb32a67ba4fb4">handleCollision</a> (<a class="el" href="class_t_g_a_1_1_collidable.html">Collidable</a> &amp;collidedWith)=0</td></tr>
-<tr class="memitem:a80032b0fa56366e68a8de14be347e2a6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#a80032b0fa56366e68a8de14be347e2a6">getType</a> ()=0</td></tr>
 <tr class="memitem:ad532a4f018ec7c5dcff477ba1b9944fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_g_a_1_1_bounding_box.html">BoundingBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#ad532a4f018ec7c5dcff477ba1b9944fb">getBounds</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a3cff8ef76e4e915985dc51e4e1f71105"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_g_a_1_1_bounding_box.html">BoundingBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#a3cff8ef76e4e915985dc51e4e1f71105">bounds</a></td></tr>
-<tr class="memitem:a24cb5224b01b50f2b2103a6a407eed17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_collidable.html#a24cb5224b01b50f2b2103a6a407eed17">id</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>"Interface" to attach to anything that can be collided with. </p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa134d9b68e910e5d618745a2a99d471c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TGA::Collidable::Collidable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_g_a_1_1_bounding_box.html">BoundingBox</a>&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad532a4f018ec7c5dcff477ba1b9944fb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -143,33 +159,6 @@ Protected Attributes</h2></td></tr>
 <p>getBounds</p>
 <p>Returns the boundaries of this collidable. </p>
 <dl class="section return"><dt>Returns:</dt><dd><a class="el" href="class_t_g_a_1_1_bounding_box.html" title="Represents the boundaries of an entity.">TGA::BoundingBox</a> - the bounds of the collidable </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a80032b0fa56366e68a8de14be347e2a6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual int TGA::Collidable::getType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>getType</p>
-<p>Returns the type of this collidable. </p>
-<dl class="section warning"><dt>Warning:</dt><dd>up to you to keep your IDs unique. </dd></dl>
-<dl class="section return"><dt>Returns:</dt><dd>int - the unique specifier for this <a class="el" href="class_t_g_a_1_1_collidable.html" title="&quot;Interface&quot; to attach to anything that can be collided with.">Collidable</a>. </dd></dl>
 
 </div>
 </div>
@@ -198,7 +187,7 @@ Protected Attributes</h2></td></tr>
 <p>Updates the collidable entity based on what it collided with. </p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_t_g_a_1_1_collidable.html" title="&quot;Interface&quot; to attach to anything that can be collided with.">Collidable</a></td><td>collidedWith - the collidable entity collided with </td></tr>
+    <tr><td class="paramname">collidedWith</td><td>- the collidable entity collided with </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,26 +215,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a24cb5224b01b50f2b2103a6a407eed17"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int TGA::Collidable::id</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/Tag/Google Drive/Projects/TGAEngine/include/<a class="el" href="_collidable_8h_source.html">Collidable.h</a></li>
 </ul>
@@ -255,7 +224,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_collidable.html">Collidable</a></li>
-    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
+    <li class="footer">Generated on Tue Jul 24 2012 13:24:54 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

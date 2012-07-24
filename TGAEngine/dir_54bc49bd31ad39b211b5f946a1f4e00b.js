@@ -36,6 +36,9 @@ var dir_54bc49bd31ad39b211b5f946a1f4e00b =
     [ "TextureManager.h", "_texture_manager_8h.html", [
       [ "TextureManager", "class_t_g_a_1_1_texture_manager.html", "class_t_g_a_1_1_texture_manager" ]
     ] ],
+    [ "Timer.h", "_timer_8h.html", [
+      [ "Timer", "class_t_g_a_1_1_timer.html", "class_t_g_a_1_1_timer" ]
+    ] ],
     [ "Vector2D.h", "_vector2_d_8h.html", [
       [ "Vector2D", "class_t_g_a_1_1_vector2_d.html", "class_t_g_a_1_1_vector2_d" ]
     ] ]

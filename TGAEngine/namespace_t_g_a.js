@@ -12,5 +12,6 @@ var namespace_t_g_a =
     [ "Singleton", "class_t_g_a_1_1_singleton.html", "class_t_g_a_1_1_singleton" ],
     [ "Texture", "class_t_g_a_1_1_texture.html", "class_t_g_a_1_1_texture" ],
     [ "TextureManager", "class_t_g_a_1_1_texture_manager.html", "class_t_g_a_1_1_texture_manager" ],
+    [ "Timer", "class_t_g_a_1_1_timer.html", "class_t_g_a_1_1_timer" ],
     [ "Vector2D", "class_t_g_a_1_1_vector2_d.html", "class_t_g_a_1_1_vector2_d" ]
 ];

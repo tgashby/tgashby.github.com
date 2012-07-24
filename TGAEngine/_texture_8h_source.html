@@ -126,31 +126,31 @@ $(document).ready(function(){initNavTree('_texture_8h.html','');});
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a286f332149f2612b2eccc26e1d374006">deleteMe</a>();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a89beaa47ed443998717c65900db55117">draw</a>(GLfloat xPos, GLfloat yPos);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a9443ec4690d68d3429b3d60463b352c1">drawSection</a>(GLfloat xPos, GLfloat yPos, SDL_Rect section);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a9443ec4690d68d3429b3d60463b352c1">drawSection</a>(GLfloat xPos, GLfloat yPos, <span class="keywordtype">int</span> sectX, <span class="keywordtype">int</span> sectY,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        <span class="keywordtype">int</span> sectWidth, <span class="keywordtype">int</span> sectHeight);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                GLsizei <a class="code" href="class_t_g_a_1_1_texture.html#aa781eac52dbc785f3e4c113b966c872b">getWidth</a>();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                GLsizei <a class="code" href="class_t_g_a_1_1_texture.html#a44ec721db24b82ef122fba63b2598e51">getHeight</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                GLuint texture;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                std::string fileName;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                GLsizei width;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                GLsizei height;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        };</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#ae27179a0838bddc4e5786391db958866">draw</a>(<span class="keywordtype">float</span> xPos, <span class="keywordtype">float</span> yPos, <span class="keywordtype">bool</span> flipped = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a205c087ea605e560ae1ca4552b1a8085">drawSection</a>(<span class="keywordtype">float</span> xPos, <span class="keywordtype">float</span> yPos, SDL_Rect section, <span class="keywordtype">bool</span> flipped = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_texture.html#a205c087ea605e560ae1ca4552b1a8085">drawSection</a>(<span class="keywordtype">float</span> xPos, <span class="keywordtype">float</span> yPos, <span class="keywordtype">int</span> sectX, <span class="keywordtype">int</span> sectY,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;         <span class="keywordtype">int</span> sectWidth, <span class="keywordtype">int</span> sectHeight, <span class="keywordtype">bool</span> flipped = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                GLsizei <a class="code" href="class_t_g_a_1_1_texture.html#aa781eac52dbc785f3e4c113b966c872b">getWidth</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                GLsizei <a class="code" href="class_t_g_a_1_1_texture.html#a44ec721db24b82ef122fba63b2598e51">getHeight</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                GLuint texture;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                std::string fileName;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                GLsizei width;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                GLsizei height;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        };</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6140f7f607ed05be60e2d98f7377c09d.html">TGAEngine</a></li><li class="navelem"><a class="el" href="dir_54bc49bd31ad39b211b5f946a1f4e00b.html">include</a></li><li class="navelem"><a class="el" href="_texture_8h.html">Texture.h</a></li>
-    <li class="footer">Generated on Wed Jul 18 2012 21:49:28 for TGAEngine by
+    <li class="footer">Generated on Tue Jul 24 2012 13:24:54 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>
