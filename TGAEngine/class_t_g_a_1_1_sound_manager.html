@@ -106,24 +106,39 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_sound_manager.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>Manages all sounds and music files.  
+ <a href="class_t_g_a_1_1_sound_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_sound_manager_8h_source.html">SoundManager.h</a>&gt;</code></p>
 
 <p><a href="class_t_g_a_1_1_sound_manager-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d7b5cdc580d303213a2978ded30ae1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a0d7b5cdc580d303213a2978ded30ae1a">SoundManager</a> (void)</td></tr>
-<tr class="memitem:a8402d22f81b78240fa1102f6ff9e8eb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a8402d22f81b78240fa1102f6ff9e8eb5">~SoundManager</a> (void)</td></tr>
+<tr class="memitem:aeadf7e01c299d6450ae42d1f0e75ada1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#aeadf7e01c299d6450ae42d1f0e75ada1">SoundManager</a> ()</td></tr>
+<tr class="memitem:a4d0b9c245847b290f4e3bacc37fe9602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a4d0b9c245847b290f4e3bacc37fe9602">addSound</a> (<a class="el" href="class_t_g_a_1_1_sound.html">Sound</a> *sound, std::string soundName)</td></tr>
+<tr class="memitem:a6e751a490adc865115dae173e66a8ce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a6e751a490adc865115dae173e66a8ce1">removeSound</a> (std::string soundName)</td></tr>
+<tr class="memitem:a2c49d705101fb57fb9ff9bd26744b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a2c49d705101fb57fb9ff9bd26744b70c">playSound</a> (std::string soundName, int loops)</td></tr>
+<tr class="memitem:adce5e78087a0e8946118258bc017f057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#adce5e78087a0e8946118258bc017f057">pauseSound</a> (std::string soundName)</td></tr>
+<tr class="memitem:a8c3aa1a1c62ac058a0d0348d27864ad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a8c3aa1a1c62ac058a0d0348d27864ad5">removeAllSounds</a> ()</td></tr>
+<tr class="memitem:a9194a9dcffa3d8e56ef05f517b9f4a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a9194a9dcffa3d8e56ef05f517b9f4a39">addMusic</a> (<a class="el" href="class_t_g_a_1_1_music.html">Music</a> *musicTrack, std::string musicName)</td></tr>
+<tr class="memitem:a981357a00d74f6cf389a2d63a662cb15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a981357a00d74f6cf389a2d63a662cb15">removeMusic</a> (std::string musicName)</td></tr>
+<tr class="memitem:aee79f9f018e79034a1bbad9b22066b70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#aee79f9f018e79034a1bbad9b22066b70">playMusic</a> (std::string musicName, int loops)</td></tr>
+<tr class="memitem:a60b64c91a47db84e7aa01938e86cd55a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a60b64c91a47db84e7aa01938e86cd55a">pauseMusic</a> (std::string musicName)</td></tr>
+<tr class="memitem:a66303135e4286af34f5cd13545135226"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a66303135e4286af34f5cd13545135226">removeAllMusic</a> ()</td></tr>
+<tr class="memitem:a86baaa3ef8fabd55c62dd74b1c6f637f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound_manager.html#a86baaa3ef8fabd55c62dd74b1c6f637f">pauseAllSounds</a> ()</td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0d7b5cdc580d303213a2978ded30ae1a"></a>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Manages all sounds and music files. </p>
+<p>Differentiates between Sounds and <a class="el" href="class_t_g_a_1_1_music.html" title="Represents a music track (as opposed to a sound effect)">Music</a>. At the end of the day, there's really almost no difference. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aeadf7e01c299d6450ae42d1f0e75ada1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">TGA::SoundManager::SoundManager </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -132,19 +147,291 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8402d22f81b78240fa1102f6ff9e8eb5"></a>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9194a9dcffa3d8e56ef05f517b9f4a39"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TGA::SoundManager::~SoundManager </td>
+          <td class="memname">void TGA::SoundManager::addMusic </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
+          <td class="paramtype"><a class="el" href="class_t_g_a_1_1_music.html">Music</a> *&#160;</td>
+          <td class="paramname"><em>musicTrack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>musicName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>addMusic</p>
+<p>Add a music track to the collection. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">musicTrack</td><td>- the pointer to the <a class="el" href="class_t_g_a_1_1_music.html" title="Represents a music track (as opposed to a sound effect)">Music</a> </td></tr>
+    <tr><td class="paramname">musicName</td><td>- the name to give to the music track </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d0b9c245847b290f4e3bacc37fe9602"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::addSound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_g_a_1_1_sound.html">Sound</a> *&#160;</td>
+          <td class="paramname"><em>sound</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>soundName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>addSound</p>
+<p>Add a sound to the manager. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sound</td><td>- pointer to the <a class="el" href="class_t_g_a_1_1_sound.html" title="Represents a sound effect (as opposed to a music track)">Sound</a> </td></tr>
+    <tr><td class="paramname">soundName</td><td>- the name to give the sound </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a86baaa3ef8fabd55c62dd74b1c6f637f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::pauseAllSounds </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>pauseAllSounds</p>
+<p>Pauses all sounds. </p>
+
+</div>
+</div>
+<a class="anchor" id="a60b64c91a47db84e7aa01938e86cd55a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::pauseMusic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>musicName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pauseMusic</p>
+<p>Pauses the given music. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">musicName</td><td>- the name given to the sound </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adce5e78087a0e8946118258bc017f057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::pauseSound </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>soundName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pauseSound</p>
+<p>Pauses the given sound. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soundName</td><td>- the name given to the sound </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aee79f9f018e79034a1bbad9b22066b70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::playMusic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>musicName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>playMusic</p>
+<p>Plays the given music track a number of times. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">musicName</td><td>- the name given to the music track </td></tr>
+    <tr><td class="paramname">loops</td><td>- the number of times to play the track, -1 for indefinitely </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c49d705101fb57fb9ff9bd26744b70c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::playSound </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>soundName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>playSound</p>
+<p>Plays the given sound a set number of times. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soundName</td><td>- the name given to the sound </td></tr>
+    <tr><td class="paramname">loops</td><td>- the number of times to play the sound, -1 for indefinitely </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a66303135e4286af34f5cd13545135226"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::removeAllMusic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>removeAllMusic</p>
+<p>Removes all music tracks from the collection. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8c3aa1a1c62ac058a0d0348d27864ad5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::removeAllSounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>removeAllSounds</p>
+<p>Remove every sound in the collection. </p>
+
+</div>
+</div>
+<a class="anchor" id="a981357a00d74f6cf389a2d63a662cb15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::removeMusic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>musicName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>removeMusic</p>
+<p>Remove the given music track. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">musicName</td><td>- the name given to the music track </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6e751a490adc865115dae173e66a8ce1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::SoundManager::removeSound </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>soundName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>removeSound</p>
+<p>Removes a sound from the collection. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soundName</td><td>- the name given to the sound </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -157,7 +444,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_sound_manager.html">SoundManager</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

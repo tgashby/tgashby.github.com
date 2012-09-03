@@ -6,5 +6,6 @@ var class_t_g_a_1_1_engine =
     [ "GameCamera", "class_t_g_a_1_1_engine.html#a9dfe9831c3bfd3b767b0038ce419b6f2", null ],
     [ "Graphics", "class_t_g_a_1_1_engine.html#a9a96aa95a0531d59a36229f2631bc728", null ],
     [ "Input", "class_t_g_a_1_1_engine.html#a99ee6dd54f1c4c664536427f3209895c", null ],
+    [ "Sounds", "class_t_g_a_1_1_engine.html#a7e610c54d4350fd0487e7fb902f70c0b", null ],
     [ "Textures", "class_t_g_a_1_1_engine.html#af436b7d28ce231cbb69f1735c5d8b54f", null ]
 ];

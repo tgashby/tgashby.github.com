@@ -101,25 +101,32 @@ $(document).ready(function(){initNavTree('_state_manager_8h.html','');});
 <div class="title">StateManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_state_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>TGA</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_state_manager.html">    5</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_state_manager.html">StateManager</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <a class="code" href="class_t_g_a_1_1_state_manager.html#abd1cacdf1ab284796230d18ac6c9132e">StateManager</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <a class="code" href="class_t_g_a_1_1_state_manager.html#a2f9131625548e36f8ef2f86ec2bee101">~StateManager</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        };</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<a href="_state_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_state_8h.html">State.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>TGA</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_state_manager.html">   22</a></span>&#160;   <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_state_manager.html" title="Manages all the states of the game.">StateManager</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_state_manager.html#aad5f141d0764e4701db2d3b00e564c54">PushState</a> (<a class="code" href="class_t_g_a_1_1_state.html" title="A State is any state of the game, like Menu, Game, Win, Lose, Etc.">State</a>* state);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_state_manager.html#a911a8445d8cded0d52dff4b0efd9c41f">UpdateCurrentState</a> ();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_state_manager.html#ac99cfe0fe86e805c5f5a7a37f7717447">DrawCurrentState</a> ();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordtype">void</span> PopState ();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      std::vector&lt;State*&gt; states;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6140f7f607ed05be60e2d98f7377c09d.html">TGAEngine</a></li><li class="navelem"><a class="el" href="dir_54bc49bd31ad39b211b5f946a1f4e00b.html">include</a></li><li class="navelem"><a class="el" href="_state_manager_8h.html">StateManager.h</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

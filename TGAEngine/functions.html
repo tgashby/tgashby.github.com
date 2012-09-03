@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -140,16 +140,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>addFrame()
 : <a class="el" href="class_t_g_a_1_1_animation.html#ab06a35f612fab9915f1ea2c7c9abb135">TGA::Animation</a>
 </li>
+<li>addMusic()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a9194a9dcffa3d8e56ef05f517b9f4a39">TGA::SoundManager</a>
+</li>
+<li>addSound()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a4d0b9c245847b290f4e3bacc37fe9602">TGA::SoundManager</a>
+</li>
 <li>addTexture()
 : <a class="el" href="class_t_g_a_1_1_texture_manager.html#a3c1301cfa1f5c75317e65caf00cfb1fd">TGA::TextureManager</a>
 </li>
-<li>Animation
-: <a class="el" href="class_t_g_a_1_1_animation_manager.html#af47625f50036c466946f960db7320bcf">TGA::AnimationManager</a>
-, <a class="el" href="class_t_g_a_1_1_animation.html#ae69c52cffb32d46424097d9d2c322f42">TGA::Animation</a>
+<li>Animation()
+: <a class="el" href="class_t_g_a_1_1_animation.html#a354a65266847fdb032cb88a097bed74d">TGA::Animation</a>
+, <a class="el" href="class_t_g_a_1_1_animation_manager.html#af47625f50036c466946f960db7320bcf">TGA::AnimationManager</a>
 </li>
-<li>AnimationManager
-: <a class="el" href="class_t_g_a_1_1_animation.html#a00b7f00c1e25e81e518e5faa334dbe66">TGA::Animation</a>
-, <a class="el" href="class_t_g_a_1_1_animation_manager.html#aab1f778c38d90bc23c2e189c84dae222">TGA::AnimationManager</a>
+<li>AnimationManager()
+: <a class="el" href="class_t_g_a_1_1_animation_manager.html#aab1f778c38d90bc23c2e189c84dae222">TGA::AnimationManager</a>
+, <a class="el" href="class_t_g_a_1_1_animation.html#a00b7f00c1e25e81e518e5faa334dbe66">TGA::Animation</a>
 </li>
 <li>animations
 : <a class="el" href="class_t_g_a_1_1_animation_manager.html#aa0a46eba025dcb4767229a9848ba2e07">TGA::AnimationManager</a>
@@ -204,11 +210,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_t_g_a_1_1_vector2_d.html#ad8faf8c7b4bb0174133a062197a25c7e">TGA::Vector2D</a>
 </li>
 <li>draw()
-: <a class="el" href="class_t_g_a_1_1_texture.html#ae27179a0838bddc4e5786391db958866">TGA::Texture</a>
-, <a class="el" href="class_t_g_a_1_1_animation.html#af0ff1fe856f32ffb305bab090ae02832">TGA::Animation</a>
+: <a class="el" href="class_t_g_a_1_1_state.html#aa62bb0bf7f4454eb19beea326c9ad3c9">TGA::State</a>
+, <a class="el" href="class_t_g_a_1_1_texture.html#abdae1c38163f2d636f2152d4cd7fb574">TGA::Texture</a>
+, <a class="el" href="class_t_g_a_1_1_animation.html#abac465606bb0ca2b7f3f3d832c52e416">TGA::Animation</a>
+</li>
+<li>DrawCurrentState()
+: <a class="el" href="class_t_g_a_1_1_state_manager.html#ac99cfe0fe86e805c5f5a7a37f7717447">TGA::StateManager</a>
 </li>
 <li>drawSection()
-: <a class="el" href="class_t_g_a_1_1_texture.html#af2e8d5f05e2fce54cc27dc9454cf53ad">TGA::Texture</a>
+: <a class="el" href="class_t_g_a_1_1_texture.html#af032dcccc4189859120bfaefeb35ea29">TGA::Texture</a>
 </li>
 </ul>
 
@@ -233,12 +243,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getFrameCount()
 : <a class="el" href="class_t_g_a_1_1_animation.html#a793fca86cc7b0becc9121302a7abd303">TGA::Animation</a>
 </li>
+<li>getFrameNum()
+: <a class="el" href="class_t_g_a_1_1_animation.html#a3999fd81b8a812eecfb2141f41f76b83">TGA::Animation</a>
+</li>
 <li>getHeight()
 : <a class="el" href="class_t_g_a_1_1_bounding_box.html#a29ba09fd304e18d0e11c831264f2e983">TGA::BoundingBox</a>
 , <a class="el" href="class_t_g_a_1_1_texture.html#a44ec721db24b82ef122fba63b2598e51">TGA::Texture</a>
 </li>
 <li>getMouseCoords()
-: <a class="el" href="class_t_g_a_1_1_input_manager.html#a351b3c3850a7021bfa29cbdfaa73be49">TGA::InputManager</a>
+: <a class="el" href="class_t_g_a_1_1_input_manager.html#a91bdfb2fade5464a0f8fd15ea7106d2e">TGA::InputManager</a>
 </li>
 <li>GetSingletonPtr()
 : <a class="el" href="class_t_g_a_1_1_singleton.html#aaa8b85af18061260a53438f827491d7d">TGA::Singleton&lt; T &gt;</a>
@@ -251,14 +264,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_t_g_a_1_1_texture.html#aa781eac52dbc785f3e4c113b966c872b">TGA::Texture</a>
 </li>
 <li>getX()
-: <a class="el" href="class_t_g_a_1_1_bounding_box.html#a6ea847bc9913665ecedba00eaa965f43">TGA::BoundingBox</a>
-, <a class="el" href="class_t_g_a_1_1_camera.html#aca80e6d69ec0da511a53364991fda01d">TGA::Camera</a>
-, <a class="el" href="class_t_g_a_1_1_vector2_d.html#a2a649939fe66303a670ebdc85656f95a">TGA::Vector2D</a>
+: <a class="el" href="class_t_g_a_1_1_vector2_d.html#a2a649939fe66303a670ebdc85656f95a">TGA::Vector2D</a>
+, <a class="el" href="class_t_g_a_1_1_bounding_box.html#a6ea847bc9913665ecedba00eaa965f43">TGA::BoundingBox</a>
+, <a class="el" href="class_t_g_a_1_1_camera.html#a38dc9d63ed32c0442753136a5ff278c7">TGA::Camera</a>
 </li>
 <li>getY()
-: <a class="el" href="class_t_g_a_1_1_camera.html#ae2f1f4458701966ccf5e88c4e2efba37">TGA::Camera</a>
+: <a class="el" href="class_t_g_a_1_1_bounding_box.html#aabc6988875f2ae55efd5d0a050ca3161">TGA::BoundingBox</a>
 , <a class="el" href="class_t_g_a_1_1_vector2_d.html#a4cdec616bd26541735ed47b8bde3870f">TGA::Vector2D</a>
-, <a class="el" href="class_t_g_a_1_1_bounding_box.html#aabc6988875f2ae55efd5d0a050ca3161">TGA::BoundingBox</a>
+, <a class="el" href="class_t_g_a_1_1_camera.html#acbd5adba7063509595782f7ae51ad922">TGA::Camera</a>
 </li>
 <li>goToFrame()
 : <a class="el" href="class_t_g_a_1_1_animation.html#a3c434c9de647072f91ad241e7fb6c7e1">TGA::Animation</a>
@@ -319,8 +332,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>mouseDown()
+: <a class="el" href="class_t_g_a_1_1_input_manager.html#a26230181f687b4e817142c84142b73ee">TGA::InputManager</a>
+</li>
 <li>moveOver()
-: <a class="el" href="class_t_g_a_1_1_camera.html#a5c4c257bbdaa9d76eb56986c6e77fe2d">TGA::Camera</a>
+: <a class="el" href="class_t_g_a_1_1_camera.html#ae1860b37113bb6fe73a50f07c9acb4c0">TGA::Camera</a>
+</li>
+<li>Music()
+: <a class="el" href="class_t_g_a_1_1_music.html#aa0697efa0ae0ee1cb33d59f0cba1e9a9">TGA::Music</a>
 </li>
 </ul>
 
@@ -357,12 +376,36 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>pause()
 : <a class="el" href="class_t_g_a_1_1_animation.html#a30aa64c97660730188e1cfb29894fdac">TGA::Animation</a>
+, <a class="el" href="class_t_g_a_1_1_music.html#aebc33fa6e2e48abcabab9a0afb045ccf">TGA::Music</a>
+, <a class="el" href="class_t_g_a_1_1_sound.html#a9abf6dea8a9f45ad15782b2d690dcca3">TGA::Sound</a>
 </li>
 <li>pauseAll()
 : <a class="el" href="class_t_g_a_1_1_animation_manager.html#a49446d93b8fc1a7f0d7029af54db3649">TGA::AnimationManager</a>
 </li>
+<li>pauseAllSounds()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a86baaa3ef8fabd55c62dd74b1c6f637f">TGA::SoundManager</a>
+</li>
+<li>pauseMusic()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a60b64c91a47db84e7aa01938e86cd55a">TGA::SoundManager</a>
+</li>
+<li>pauseSound()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#adce5e78087a0e8946118258bc017f057">TGA::SoundManager</a>
+</li>
+<li>play()
+: <a class="el" href="class_t_g_a_1_1_music.html#a9e7bf63fe9f044887c742e2906d2e5e7">TGA::Music</a>
+, <a class="el" href="class_t_g_a_1_1_sound.html#aebe91086e4b72eb3b6cc9855826d3150">TGA::Sound</a>
+</li>
+<li>playMusic()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#aee79f9f018e79034a1bbad9b22066b70">TGA::SoundManager</a>
+</li>
+<li>playSound()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a2c49d705101fb57fb9ff9bd26744b70c">TGA::SoundManager</a>
+</li>
 <li>printFrames()
 : <a class="el" href="class_t_g_a_1_1_animation.html#a974ae129c220b39756d892979d46b8be">TGA::Animation</a>
+</li>
+<li>PushState()
+: <a class="el" href="class_t_g_a_1_1_state_manager.html#aad5f141d0764e4701db2d3b00e564c54">TGA::StateManager</a>
 </li>
 </ul>
 
@@ -371,11 +414,23 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>removeAll()
 : <a class="el" href="class_t_g_a_1_1_animation_manager.html#a64c6c2bafcdb984e0d11b3f49f999600">TGA::AnimationManager</a>
 </li>
+<li>removeAllMusic()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a66303135e4286af34f5cd13545135226">TGA::SoundManager</a>
+</li>
+<li>removeAllSounds()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a8c3aa1a1c62ac058a0d0348d27864ad5">TGA::SoundManager</a>
+</li>
 <li>removeAllTextures()
 : <a class="el" href="class_t_g_a_1_1_texture_manager.html#a1a5688fa9f4764006749c680f5a0f364">TGA::TextureManager</a>
 </li>
 <li>removeAnimation()
 : <a class="el" href="class_t_g_a_1_1_animation_manager.html#a31963d7a52d65c7168c7b498025c3bc5">TGA::AnimationManager</a>
+</li>
+<li>removeMusic()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a981357a00d74f6cf389a2d63a662cb15">TGA::SoundManager</a>
+</li>
+<li>removeSound()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#a6e751a490adc865115dae173e66a8ce1">TGA::SoundManager</a>
 </li>
 <li>removeTexture()
 : <a class="el" href="class_t_g_a_1_1_texture_manager.html#a919de012dc0e3ebf7f833029791f36bc">TGA::TextureManager</a>
@@ -413,7 +468,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_t_g_a_1_1_bounding_box.html#a1512b887b4ec559930a6de3df6d92138">TGA::BoundingBox</a>
 </li>
 <li>setPosition()
-: <a class="el" href="class_t_g_a_1_1_camera.html#a3bf84ee3c6354461036c9d61857111b2">TGA::Camera</a>
+: <a class="el" href="class_t_g_a_1_1_camera.html#ab1eaa20b5059dc94439974cbfa0b37d0">TGA::Camera</a>
 </li>
 <li>setRepetitions()
 : <a class="el" href="class_t_g_a_1_1_animation.html#aafcdef67691129f1f4349bef7086d617">TGA::Animation</a>
@@ -429,11 +484,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_t_g_a_1_1_vector2_d.html#afee2c3569906e519843fa141e78a1daf">TGA::Vector2D</a>
 </li>
 <li>setY()
-: <a class="el" href="class_t_g_a_1_1_vector2_d.html#a48cbd76701c14ac9431ec4107cb62ca7">TGA::Vector2D</a>
-, <a class="el" href="class_t_g_a_1_1_bounding_box.html#a0cc2d06adde3e0c773ef376c3c2cb5d8">TGA::BoundingBox</a>
+: <a class="el" href="class_t_g_a_1_1_bounding_box.html#a0cc2d06adde3e0c773ef376c3c2cb5d8">TGA::BoundingBox</a>
+, <a class="el" href="class_t_g_a_1_1_vector2_d.html#a48cbd76701c14ac9431ec4107cb62ca7">TGA::Vector2D</a>
 </li>
 <li>shutDown()
 : <a class="el" href="class_t_g_a_1_1_graphics_manager.html#a95b87c2c7b271a0dbb08cfe95b659c71">TGA::GraphicsManager</a>
+</li>
+<li>Sound()
+: <a class="el" href="class_t_g_a_1_1_sound.html#a3c963b0566f5014d868cf14047689a89">TGA::Sound</a>
+</li>
+<li>SoundManager()
+: <a class="el" href="class_t_g_a_1_1_sound_manager.html#aeadf7e01c299d6450ae42d1f0e75ada1">TGA::SoundManager</a>
+</li>
+<li>Sounds
+: <a class="el" href="class_t_g_a_1_1_engine.html#a7e610c54d4350fd0487e7fb902f70c0b">TGA::Engine</a>
 </li>
 <li>swapBuffers()
 : <a class="el" href="class_t_g_a_1_1_graphics_manager.html#ab4f80fd3d8810b574ea80d8e184a2409">TGA::GraphicsManager</a>
@@ -466,9 +530,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>update()
 : <a class="el" href="class_t_g_a_1_1_animation.html#ad5544857164746b89e44314dd3648501">TGA::Animation</a>
 , <a class="el" href="class_t_g_a_1_1_input_manager.html#adf4e1b7a2744bea434236d4b0ea75381">TGA::InputManager</a>
+, <a class="el" href="class_t_g_a_1_1_state.html#a058d036d423fd10315a3388118fb2e72">TGA::State</a>
 </li>
 <li>updateAll()
 : <a class="el" href="class_t_g_a_1_1_animation_manager.html#acc0c6d5c8166ed531ab16d300cbbbd18">TGA::AnimationManager</a>
+</li>
+<li>UpdateCurrentState()
+: <a class="el" href="class_t_g_a_1_1_state_manager.html#a911a8445d8cded0d52dff4b0efd9c41f">TGA::StateManager</a>
 </li>
 </ul>
 
@@ -514,7 +582,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jul 24 2012 13:24:55 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

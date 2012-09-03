@@ -101,20 +101,26 @@ $(document).ready(function(){initNavTree('_state_8h.html','');});
 <div class="title">State.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">namespace </span>TGA</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;{</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="namespace_t_g_a.html#aba22536d6e016ca36be8bc0aad5f0097">    3</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="namespace_t_g_a.html#aba22536d6e016ca36be8bc0aad5f0097">State</a></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        };</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+<a href="_state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>TGA</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_state.html">   20</a></span>&#160;   <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_state.html" title="A State is any state of the game, like Menu, Game, Win, Lose, Etc.">State</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_t_g_a_1_1_state.html#a058d036d423fd10315a3388118fb2e72">update</a> () = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_state.html#aa62bb0bf7f4454eb19beea326c9ad3c9">draw</a> () = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6140f7f607ed05be60e2d98f7377c09d.html">TGAEngine</a></li><li class="navelem"><a class="el" href="dir_54bc49bd31ad39b211b5f946a1f4e00b.html">include</a></li><li class="navelem"><a class="el" href="_state_8h.html">State.h</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

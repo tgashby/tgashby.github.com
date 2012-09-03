@@ -106,45 +106,85 @@ $(document).ready(function(){initNavTree('class_t_g_a_1_1_sound.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a sound effect (as opposed to a music track)  
+ <a href="class_t_g_a_1_1_sound.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_sound_8h_source.html">Sound.h</a>&gt;</code></p>
 
 <p><a href="class_t_g_a_1_1_sound-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab44f075252b4f61ce1aed87b3d514691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound.html#ab44f075252b4f61ce1aed87b3d514691">Sound</a> (void)</td></tr>
-<tr class="memitem:a5fa4d5f142d5612a45924f14561b17d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound.html#a5fa4d5f142d5612a45924f14561b17d0">~Sound</a> (void)</td></tr>
+<tr class="memitem:a3c963b0566f5014d868cf14047689a89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound.html#a3c963b0566f5014d868cf14047689a89">Sound</a> (std::string fileName)</td></tr>
+<tr class="memitem:aebe91086e4b72eb3b6cc9855826d3150"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound.html#aebe91086e4b72eb3b6cc9855826d3150">play</a> (int loops)</td></tr>
+<tr class="memitem:a9abf6dea8a9f45ad15782b2d690dcca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_g_a_1_1_sound.html#a9abf6dea8a9f45ad15782b2d690dcca3">pause</a> ()</td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab44f075252b4f61ce1aed87b3d514691"></a>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Represents a sound effect (as opposed to a music track) </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3c963b0566f5014d868cf14047689a89"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">TGA::Sound::Sound </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_t_g_a_1_1_sound.html" title="Represents a sound effect (as opposed to a music track)">Sound</a></p>
+<p>Loads a song from the given filename. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>- path to the sound file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a5fa4d5f142d5612a45924f14561b17d0"></a>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9abf6dea8a9f45ad15782b2d690dcca3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TGA::Sound::~Sound </td>
+          <td class="memname">void TGA::Sound::pause </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>pause</p>
+<p>Pauses the sound. </p>
+
+</div>
+</div>
+<a class="anchor" id="aebe91086e4b72eb3b6cc9855826d3150"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TGA::Sound::play </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loops</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>play</p>
+<p>Plays the sound a number of times, -1 for indefinitely. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loops</td><td>- the number of times to play the sound. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -157,7 +197,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_t_g_a.html">TGA</a></li><li class="navelem"><a class="el" href="class_t_g_a_1_1_sound.html">Sound</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

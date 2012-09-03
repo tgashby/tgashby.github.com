@@ -20,11 +20,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -32,6 +28,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_animation_8h.html",
+"namespacemembers_enum.html",
 ];
 
 var navTreeSubIndices = new Array();

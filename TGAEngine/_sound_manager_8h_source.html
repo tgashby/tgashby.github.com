@@ -101,25 +101,54 @@ $(document).ready(function(){initNavTree('_sound_manager_8h.html','');});
 <div class="title">SoundManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_sound_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>TGA</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_sound_manager.html">    5</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_sound_manager.html">SoundManager</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <a class="code" href="class_t_g_a_1_1_sound_manager.html#a0d7b5cdc580d303213a2978ded30ae1a">SoundManager</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <a class="code" href="class_t_g_a_1_1_sound_manager.html#a8402d22f81b78240fa1102f6ff9e8eb5">~SoundManager</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        };</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<a href="_sound_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sound_8h.html">Sound.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_music_8h.html">Music.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>TGA</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_t_g_a_1_1_sound_manager.html">   24</a></span>&#160;   <span class="keyword">class </span><a class="code" href="class_t_g_a_1_1_sound_manager.html" title="Manages all sounds and music files.">SoundManager</a> </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <a class="code" href="class_t_g_a_1_1_sound_manager.html#aeadf7e01c299d6450ae42d1f0e75ada1">SoundManager</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a4d0b9c245847b290f4e3bacc37fe9602">addSound</a> (<a class="code" href="class_t_g_a_1_1_sound.html" title="Represents a sound effect (as opposed to a music track)">Sound</a>* sound, std::string soundName);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a6e751a490adc865115dae173e66a8ce1">removeSound</a> (std::string soundName);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a2c49d705101fb57fb9ff9bd26744b70c">playSound</a> (std::string soundName, <span class="keywordtype">int</span> loops);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#adce5e78087a0e8946118258bc017f057">pauseSound</a> (std::string soundName);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a8c3aa1a1c62ac058a0d0348d27864ad5">removeAllSounds</a> ();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a9194a9dcffa3d8e56ef05f517b9f4a39">addMusic</a> (<a class="code" href="class_t_g_a_1_1_music.html" title="Represents a music track (as opposed to a sound effect)">Music</a>* musicTrack, std::string musicName);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a981357a00d74f6cf389a2d63a662cb15">removeMusic</a> (std::string musicName);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#aee79f9f018e79034a1bbad9b22066b70">playMusic</a> (std::string musicName, <span class="keywordtype">int</span> loops);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a60b64c91a47db84e7aa01938e86cd55a">pauseMusic</a> (std::string musicName);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a66303135e4286af34f5cd13545135226">removeAllMusic</a> ();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_t_g_a_1_1_sound_manager.html#a86baaa3ef8fabd55c62dd74b1c6f637f">pauseAllSounds</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      std::map&lt;std::string, Sound*&gt; sounds;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      std::map&lt;std::string, Music*&gt; music;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   };</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6140f7f607ed05be60e2d98f7377c09d.html">TGAEngine</a></li><li class="navelem"><a class="el" href="dir_54bc49bd31ad39b211b5f946a1f4e00b.html">include</a></li><li class="navelem"><a class="el" href="_sound_manager_8h.html">SoundManager.h</a></li>
-    <li class="footer">Generated on Thu Jul 5 2012 13:13:58 for TGAEngine by
+    <li class="footer">Generated on Mon Sep 3 2012 14:00:04 for TGAEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

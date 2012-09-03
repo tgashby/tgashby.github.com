@@ -1,5 +1,6 @@
 var class_t_g_a_1_1_state_manager =
 [
-    [ "StateManager", "class_t_g_a_1_1_state_manager.html#abd1cacdf1ab284796230d18ac6c9132e", null ],
-    [ "~StateManager", "class_t_g_a_1_1_state_manager.html#a2f9131625548e36f8ef2f86ec2bee101", null ]
+    [ "DrawCurrentState", "class_t_g_a_1_1_state_manager.html#ac99cfe0fe86e805c5f5a7a37f7717447", null ],
+    [ "PushState", "class_t_g_a_1_1_state_manager.html#aad5f141d0764e4701db2d3b00e564c54", null ],
+    [ "UpdateCurrentState", "class_t_g_a_1_1_state_manager.html#a911a8445d8cded0d52dff4b0efd9c41f", null ]
 ];

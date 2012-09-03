@@ -1,8 +1,12 @@
 var searchData=
 [
   ['removeall',['removeAll',['../class_t_g_a_1_1_animation_manager.html#a64c6c2bafcdb984e0d11b3f49f999600',1,'TGA::AnimationManager']]],
+  ['removeallmusic',['removeAllMusic',['../class_t_g_a_1_1_sound_manager.html#a66303135e4286af34f5cd13545135226',1,'TGA::SoundManager']]],
+  ['removeallsounds',['removeAllSounds',['../class_t_g_a_1_1_sound_manager.html#a8c3aa1a1c62ac058a0d0348d27864ad5',1,'TGA::SoundManager']]],
   ['removealltextures',['removeAllTextures',['../class_t_g_a_1_1_texture_manager.html#a1a5688fa9f4764006749c680f5a0f364',1,'TGA::TextureManager']]],
   ['removeanimation',['removeAnimation',['../class_t_g_a_1_1_animation_manager.html#a31963d7a52d65c7168c7b498025c3bc5',1,'TGA::AnimationManager']]],
+  ['removemusic',['removeMusic',['../class_t_g_a_1_1_sound_manager.html#a981357a00d74f6cf389a2d63a662cb15',1,'TGA::SoundManager']]],
+  ['removesound',['removeSound',['../class_t_g_a_1_1_sound_manager.html#a6e751a490adc865115dae173e66a8ce1',1,'TGA::SoundManager']]],
   ['removetexture',['removeTexture',['../class_t_g_a_1_1_texture_manager.html#a919de012dc0e3ebf7f833029791f36bc',1,'TGA::TextureManager']]],
   ['reset',['reset',['../class_t_g_a_1_1_animation.html#aa0acf3ef91121bc4d3b1a83680050147',1,'TGA::Animation::reset()'],['../class_t_g_a_1_1_texture.html#af74c0f814a2ada72fdb5f199db506576',1,'TGA::Texture::reset()']]],
   ['resetall',['resetAll',['../class_t_g_a_1_1_animation_manager.html#af59597114dd59f738b15e2b7175f0942',1,'TGA::AnimationManager']]],

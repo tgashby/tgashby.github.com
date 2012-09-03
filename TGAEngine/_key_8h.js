@@ -52,6 +52,10 @@ var _key_8h =
       [ "key_F11", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba4a972f0ccc5bf9527cc9f97e464b56d0", null ],
       [ "key_F12", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba30462f314559baa7871f6cfc87d8fa88", null ],
       [ "key_BACKQUOTE", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba2d571abf44a3f86e199a1a19d7dd97a1", null ],
-      [ "key_ESC", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba715dc05512996044acbf3751a48aa2cd", null ]
+      [ "key_ESC", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba715dc05512996044acbf3751a48aa2cd", null ],
+      [ "key_LEFT_ARROW", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba467e7026e0cd73c5a0ac77664807e9f6", null ],
+      [ "key_RIGHT_ARROW", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba61ff79935f6bdd309ae59ec8aa609aa8", null ],
+      [ "key_UP_ARROW", "_key_8h.html#ae22a92c442d14f686927cf54073fc70bacab9073f9af6305311a2d0120a9e2bb0", null ],
+      [ "key_DOWN_ARROW", "_key_8h.html#ae22a92c442d14f686927cf54073fc70ba870a7b356ffe229f601a04962f57bc13", null ]
     ] ]
 ];
