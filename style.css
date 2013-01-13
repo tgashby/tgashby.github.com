@@ -1,0 +1,18 @@
+#buttons-banner
+{
+	background: black;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+a.banner
+{
+	font-size: 15px;
+	line-height: 3;
+	font-family: 'Press Start 2P';
+	color: white;
+	text-decoration: none;
+	padding: 18px;
+}
