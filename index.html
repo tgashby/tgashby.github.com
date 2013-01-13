@@ -5,51 +5,6 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript">
-			$(function() {
-				var selected = null;
-
-				$("a.section").each(function() {
-					if($(this).attr("id") != "about-me") {
-						var ele = $("#" + $(this).attr("id") + "-content");
-
-						ele.css("top", "-20px");
-						ele.css("opacity", "0.0");
-					} else {
-						selected = $("#" + $(this).attr("id") + "-content");
-						selected.css("z-index", "2");
-					}
-				});
-
-				$("a.section").click(function() {
-					var ele = $("#" + $(this).attr("id") + "-content");
-
-					if(selected != null) {
-						if(ele.attr("id") == selected.attr("id")) {
-							return false;
-						}
-
-						selected.animate({
-							opacity : 0.0,
-							top : "20px"
-						}, 300, function() {
-							$(this).css("top", "-20px");
-						});
-						selected.css("z-index", "1");
-					}
-
-					ele.animate({
-						opacity : 1.0,
-						top : "0px"
-					}, 300);
-					ele.css("z-index", "2");
-					selected = ele;
-
-					return false;
-				});
-			});
-
-		</script>
-		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-30212110-1']);
 			_gaq.push(['_trackPageview']);
@@ -61,17 +16,23 @@
 				var s = document.getElementsByTagName('script')[0];
 				s.parentNode.insertBefore(ga, s);
 			})();
-
 		</script>
 	</head>
 	<body>
+		<div id="buttons-banner">
+			<a class="section" id="about-me" href="#">About Me</a>
+			<a class="section" id="blog" href="#">Blog</a>
+			<a class="section" id="projects" href="#">Projects</a>
+			<a class="section" id="twitter" href="#">Twitter</a>
+			<a class="section" id="resume" href="#">Resume</a>
+		</div>
 		<div id="header">
 			<a href="index.html"><img src="img/header.jpg" alt="Header Image" /></a>
 			<h1>TgashbyGames</h1>
 			<h2>Run solely by Taggart Ashby</h2>
 		</div>
-		<div id="left">
-			<div id="about-me-content">
+		<div id="content">
+			<div id="about-me">
 				<h3>About Me</h3>
 				<p>
 					Hey there,
@@ -92,7 +53,7 @@
 					If you'd like to contact me, don't hesitate to email at <a href="mailto:tgashby@calpoly.edu">tgashby@calpoly.edu</a> or call me at (916) 949-4933.
 				</p>
 			</div>
-			<div id="blog-content">
+			<div id="blog">
 				<h3>Blag</h3>
 				<p>
 					On occasion I'll post blog entires about current projects, my life in general, or any other thing
@@ -100,21 +61,21 @@
 				</p>
 				<a class="bigbutton" href="http://tgashby.blogspot.com/"><img src="img/blogger.png">&nbsp;Read my blog</a>
 			</div>
-			<div id="projects-content">
+			<div id="projects">
 				<h3>Projects</h3>
 				<p>
 					All my projects can be checked out on <a href="http://github.com/">GitHub</a>. I love Git and I love GitHub :-).
 				</p>
 				<a class="bigbutton" href="https://github.com/tgashby"><img src="img/github.png">&nbsp;My Projects</a>
 			</div>
-			<div id="twitter-content">
+			<div id="twitter">
 				<h3>Twitter</h3>
 				<p>
 					I do my best to post twitter updates, but I can't say I'm all that great at it.... yet.
 				</p>
 				<a class="bigbutton" href="http://twitter.com/TgashbyGames"><img src="img/twitter.png">&nbsp;@TgashbyGames</a>
 			</div>
-			<div id="resume-content">
+			<div id="resume">
 				<h3>Resume</h3>
 				<p>
 					My resume is a two page PDF.
@@ -124,13 +85,6 @@
 					If you represent a <em>specific</em> company, send me an email <a href="mailto:tgashby@calpoly.edu">tgashby@calpoly.edu</a> or give me a call (916) 949-4933.
 				</p>
 			</div>
-		</div>
-		<div id="right">
-			<a class="section" id="about-me" href="#">About Me</a>
-			<a class="section" id="blog" href="#">Blog</a>
-			<a class="section" id="projects" href="#">Projects</a>
-			<a class="section" id="twitter" href="#">Twitter</a>
-			<a class="section" id="resume" href="#">Resume</a>
 		</div>
 	</body>
 </html>
