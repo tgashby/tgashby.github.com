@@ -1,8 +1,13 @@
+body
+{
+	padding: 0;
+	margin: 0;
+}
+
 #about-me
 {
 	background: rgb(5,1,2);
 	color: white;
-	position: relative;
 	padding-top: 40px;
 	padding-left: 15px;
 	padding-right: 0;
@@ -13,17 +18,14 @@
 {
 	background: rgb(247,252,94);
 	color: white;
-	position: relative;
 	left: 0;
 	right: 0;
-	margin-top: 0;
 }
 
 #soc-links
 {
 	background: rgb(187,25,0);
 	color: white;
-	position: relative;
 	left: 0;
 	right: 0;
 }
