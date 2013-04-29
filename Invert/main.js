@@ -248,8 +248,7 @@ window.onload = function() {
 
       game.transition = game.assets['CutRunTransition.ogg'];
 
-      game.bgm = game.assets['CutRunUpLoop.ogg'];
-      game.bgm._element.loop = true;
+      game.bgm = game.assets['CutRunUpLoop.ogg'];;
 
       game.bgm.play();
    }
