@@ -227,6 +227,10 @@ window.onload = function() {
                camera.stopChillin();
             }
          }
+
+         if (game.bgm.currentTime >= game.bgm.duration) {
+            game.bgm.play();
+         };
             
          else
          {
@@ -245,7 +249,6 @@ window.onload = function() {
       game.transition = game.assets['CutRunTransition.ogg'];
 
       game.bgm = game.assets['CutRunUpLoop.ogg'];
-      game.bgm._element.loop = true;
 
       game.bgm.play();
    }
