@@ -204,7 +204,11 @@ window.onload = function() {
                else
                   bg.frame = 1;
 
-            
+           
+
+               if (game.bgm.currentTime >= game.bgm.duration) {
+                  game.bgm.play();
+               }; 
 
             /*
             if (player.y + player.height < 0 && !game.gameStateUp ||
@@ -227,10 +231,6 @@ window.onload = function() {
                camera.stopChillin();
             }
          }
-
-         if (game.bgm.currentTime >= game.bgm.duration) {
-            game.bgm.play();
-         };
             
          else
          {
@@ -249,6 +249,7 @@ window.onload = function() {
       game.transition = game.assets['CutRunTransition.ogg'];
 
       game.bgm = game.assets['CutRunUpLoop.ogg'];
+      game.bgm._element.loop = true;
 
       game.bgm.play();
    }
