@@ -1,0 +1,10 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+div {
+	border-width: 10px;
+	border-color: gray;
+	border-style: ridge;
+}
