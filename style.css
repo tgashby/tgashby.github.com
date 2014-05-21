@@ -1,4 +1,4 @@
-body 
+body
 {
 	background: #F7BE81;
 }
@@ -54,13 +54,13 @@ body
 {
 	position: absolute;
 	top: 220px;
-	margin-left: 15%;
+	margin-left: 35%;
 }
 
 #right a.section
 {
 	display: block;
-	width: 250px;
+	width: 150px;
 	height: 60px;
 	background: #fff;
 	margin-bottom: 15px;
@@ -70,27 +70,28 @@ body
 	text-decoration: none;
 	float: left;
 	margin-left: 10px;
+	border-radius: 10px;
 }
 
-#right a.section:link 
+#right a.section:link
 {
 	background: url(img/button-out.png) #000 top left no-repeat;
 	color: #fff;
 }
 
-#right a.section:visited 
+#right a.section:visited
 {
 	background: url(img/button-out.png) #000 top left no-repeat;
 	color: #fff;
 }
 
-#right a.section:active 
+#right a.section:active
 {
 	background: url(img/button-out.png) #000 top left no-repeat;
 	color: #fff;
 }
 
-#right a.section:hover 
+#right a.section:hover
 {
 	background: url(img/button-over.png) #fff top left no-repeat;
 	color: #000;
@@ -127,32 +128,32 @@ body
 	line-height: 24px;
 }
 
-#left p a:link 
-{ 
-	color: #fff; 
-	text-decoration: none; 
-	border-bottom: 1px dotted #000; 
+#left p a:link
+{
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 }
 
-#left p a:visited 
-{ 
-	color: #fff; 
-	text-decoration: none; 
-	border-bottom: 1px dotted #000; 
+#left p a:visited
+{
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 }
 
-#left p a:active 
-{ 
-	color: #fff; 
-	text-decoration: none; 
-	border-bottom: 1px dotted #000; 
+#left p a:active
+{
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 }
 
-#left p a:hover 
-{ 
-	color: #000; 
-	text-decoration: none; 
-	border-bottom: 1px solid #000; 
+#left p a:hover
+{
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #000;
 }
 
 #left li
@@ -216,30 +217,30 @@ a.bigbutton img
 	border: 0;
 }
 
-a.bigbutton:link 
-{ 
-	background: url(img/bigbutton-out.png) #000 top left no-repeat; 
-	color: #fff; 
+a.bigbutton:link
+{
+	background: url(img/bigbutton-out.png) #000 top left no-repeat;
+	color: #fff;
 	text-shadow: 0px 1px 2px #000;
 }
 
-a.bigbutton:visited 
-{ 
-	background: url(img/bigbutton-out.png) #000 top left no-repeat; 
-	color: #fff; 
-	text-shadow: 0px 1px 2px #000; 
+a.bigbutton:visited
+{
+	background: url(img/bigbutton-out.png) #000 top left no-repeat;
+	color: #fff;
+	text-shadow: 0px 1px 2px #000;
 }
 
-a.bigbutton:active 
-{ 
-	background: url(img/bigbutton-out.png) #000 top left no-repeat; 
-	color: #fff; 
-	text-shadow: 0px 1px 2px #000; 
+a.bigbutton:active
+{
+	background: url(img/bigbutton-out.png) #000 top left no-repeat;
+	color: #fff;
+	text-shadow: 0px 1px 2px #000;
 }
 
-a.bigbutton:hover 
-{ 
-	background: url(img/bigbutton-over.png) #fff top left no-repeat; 
-	color: #000; 
-	text-shadow: 0px 1px 2px #000; 
+a.bigbutton:hover
+{
+	background: url(img/bigbutton-over.png) #fff top left no-repeat;
+	color: #000;
+	text-shadow: 0px 1px 2px #000;
 }
