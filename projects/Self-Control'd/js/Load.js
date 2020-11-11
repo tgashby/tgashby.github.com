@@ -22,7 +22,7 @@ images = {
         if (loadCount == n) {
             var loadingElem = document.getElementById("loading");
             loadingElem.parentNode.removeChild(loadingElem);
-            Game.start();
+            // Game.start();
         }
     }
 

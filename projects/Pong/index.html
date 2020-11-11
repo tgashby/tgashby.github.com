@@ -1,9 +1,77 @@
 <!DOCTYPE html>
 <head>
-	<script type="text/javascript" src="https://raw.github.com/tgashby/Goomba/master/goomba.js"></script>
+	<link rel="stylesheet" href="../../style.css" type="text/css">
+	<script type="text/javascript" src="goomba.js"></script>
 </head>
 <body>
 	<h1>Pong!</h1>
-	<h2>Made with Goomba Engine</h2>
+    <h2>Made with <a href="https://github.com/tgashby/Goomba">Goomba Engine</a></h2>
+    <p>Move the left paddle with W / S, move the right paddle with [ / '</p>
 	<script type="text/javascript" src="pong.js"></script>
+
+	<div>
+		Full source code:
+		<pre>
+			<code>
+// Example Pong Game
+var Game = { width: 600, height: 300 };
+
+Goomba.init(Game.width, Game.height);
+
+var lftPaddle = Goomba.newEntity("Paddle")
+    .addAttrs({ x: 10, y: 20, w: 15, h: 150, color: "#000000" })
+    .controls({
+        W: function () { this.y -= 2 },
+        S: function () { this.y += 2 }
+    });
+
+var rtPaddle = Goomba.newEntity("Paddle")
+    .addAttrs({ x: 570, y: 20, w: 15, h: 150, color: "#FF0000" })
+    .controls({
+        OPEN_BRACKET: function () { this.y -= 2 },
+        QUOTE: function () { this.y += 2 }
+    });
+
+var ball = Goomba.newEntity("Collidable")
+    .addAttrs({ x: 300, y: 150, w: 10, h: 10, velX: 4, velY: 4 })
+    .onUpdate(function () {
+        // Hit ceiling or floor
+        if (this.y + this.h > Game.height || this.y < 0) {
+            this.velY = -this.velY;
+        }
+
+        // Reaches either side
+        if (this.x < 0) {
+            this.x = Game.width / 2;
+            this.y = Game.height / 2;
+            Goomba.triggerEvent("RightScore");
+        }
+
+        if (this.x > Game.width) {
+            this.x = Game.width / 2;
+            this.y = Game.height / 2;
+            Goomba.triggerEvent("LeftScore");
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+    })
+    .onHit("Paddle", function () {
+        this.velX = -this.velX;
+    });
+
+Goomba.newEntity("Scoreboard")
+    .addAttrs({ x: 0, y: 10, text: "Left Points: ", score: 0 })
+    .bindEvent("LeftScore", function () {
+        this.score++;
+    });
+
+Goomba.newEntity("Scoreboard")
+    .addAttrs({ x: 500, y: 10, font: "normal 12px Times New Roman", text: "Right Points: ", score: 0 })
+    .bindEvent("RightScore", function () {
+        this.score++;
+    });
+			</code>
+		</pre>
+	</div>
 </body>

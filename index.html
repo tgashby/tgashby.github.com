@@ -1,136 +1,146 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>TgashbyGames: A front for Taggart Ashby</title>
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				var selected = null;
+    <head>
+        <title>Tag Ashby</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/animation.js"></script>
+    </head>
+    <body>
+        <header id="header">
+            <h1>Tag Ashby</h1>
+        </header>
+        <div id="sections">
+            <a class="section" id="work" href="#">Work</a>
+            <a class="section" id="projects" href="#">Projects</a>
+            <a class="section" id="resume" href="#">Resume</a>
+            <a class="section" id="about-me" href="#">About Me</a>
+        </div>
+        <div id="content">
+            <div id="work-content">
+                <h3>Work</h3>
+                <br />
+                <h4>Micron (2017-Present)</h4>
+                <p>
+                    I work on the PhotoApps team which started in 2017 as two engineers and has grown to six in the last year. PhotoApps is a data collection and visualization platform for the <a href="https://en.wikipedia.org/wiki/Photolithography">photolithography</a> stage of wafer development. <br />
+                    Within the first few months we were able to rearchitect the legacy application (PHP, Perl, MySQL) to reduce incident reports by 98% and increase application uptime and availability by over 500X. <br />
+                    For the last several months I have been leading the team in a migration / remake of the application in a new platform (Typescript (Angular 8+), RestFul apis in C# (.NET Core) and Django, and Azure Cloud Services for Sql, storage, and security). <br />
+                </p>
+                <p>
+                    Due to the security constraints around Micron IP, I am unable to get any screenshots out. :-(
+                </p>
 
-				$("a.section").each(function() {
-					if($(this).attr("id") != "about-me") {
-						var ele = $("#" + $(this).attr("id") + "-content");
+                <h4>NeonMob (2015-2017)</h4>
+                <p>
+                    <a href="https://www.neonmob.com/tgashby">NeonMob</a> was a small (10 people) company that had a card trading platform where you could open packs of digital cards and trade them with others. In addition to the opening and trading, there was also a creation side where much of card content came from.
+                    Users could sign up to be creators and get community votes to create a series of cards. These creators made money when people purchased their packs of cards.
+                </p>
+                <img src="img/neonmob_trading.png" width="75%">
+                <img src="img/neonmob_pack_base.png" width="75%">
+                <img src="img/neonmob_pack_open.png" width="75%">
+                <p>
+                    I worked on all aspects of the site but my largest project was a friends and messaging system. We would send messages and payloads through Node.js and kept a friends list in MongoDB.
+                </p>
+                <img src="img/neonmob_friends.png" width="75%">
+                <p>
+                    NeonMob was not able to become cash positive quickly enough and the decision was made to move the development overseas. I stayed on to help the overseas team get up to speed and transition the application as smoothly as possible.
+                </p>
 
-						ele.css("top", "-20px");
-						ele.css("opacity", "0.0");
-					} else {
-						selected = $("#" + $(this).attr("id") + "-content");
-						selected.css("z-index", "2");
-					}
-				});
+                <h4>Zynga (Intern 2013, fulltime 2014-2015)</h4>
+                <p>I worked as an intern for ChefVille and fulltime on Zynga Poker.</p>
+                <p>
+                    <em>Poker</em><br />
+                    I worked on the Leagues team for Zynga poker which was/is a feature for leaderboards and seasonal content. You could compare your chip counts and wins against your friends and other people in your League.
+                    The top players would recieve bonus chips and gifts to show off their leader status. I worked on both the Facebook side and the (at the time) brand new Unity app that replaced the previous phone applications.
+                </p>
+                <img src="img/poker_leagues.png" width="75%">
+                <p>
+                    Additionally I took on additional responsibility to update and fix Actionscript bugs in the old Facebook app. No one wanted to do it and I volunteered.
+                </p>
+                    
+                <p>
+                    <em>ChefVille (Intern)</em><br />
+                    Most of my time at ChefVille was bug fixing but at the end I took over a Ruby project that had been left by a previous developer. The project allowed the Zynga artists to put their assets into it to spit out all the different formats and sizes needed for the in game assets.
+                    It saved them an incredible amount of time and for taking over the project I was nominated for " Master Chef", an award given each week to the strongest team member. Additionally I recieved a perfect 25/25 on my intern evaluation and was invited back to work fulltime the following year.
+                </p>
+                <img src="img/chefville.jpg" width="75%">
+            </div>
+            <div id="resume-content">
+                <a class="bigbutton" href="img/Resume.pdf"><img src="img/pdf.png">&nbsp;Resume</a>
+            </div>
+            <div id="about-me-content">
+                <h3>About Me</h3>
+                <p>
+                    Hey there,
+                    <br />
+                    My name is Taggart Ashby, though I usually just go by Tag.
+                    <br />
+                    My passion for videogames started when I was child, and I would love to get back to making games.
+                    <br />
+                </p>
+                <p>
+                    If you'd like to contact me, don't hesitate to email at <a href="mailto:tagashby@gmail.com">tagashby@gmail.com</a> or call me at (916) 949-4933.
+                </p>
+            </div>
+            <div id="projects-content">
+                <p>
+                    These are in fun-to-play/relevant order, not chronological <br />
+                    There are a lot more little projects available on my <a href="https://github.com/tgashby">GitHub</a> but I wanted to bring special attention to these.
+                </p>
+                
+                <h3>Sandstorms (2012)</h3>
+                <p>
+                    Sandstorms was the biggest game I had made up to this point and a huge undertaking. I made my own animation and graphics engine and worked with an actual artist to create the assets.
+                </p>
+                <img src="img/sandstorms_tut.png" width="75%">
+                <p>
+                    After installing you should be able to find it in your programs C:\Program Files (x86)\TgashbyGames\Sandstorms\ <br />
+                    <a href="projects/Sandstorms/SandstormsSetup.msi">Windows</a> <br />
+                    <br />
+                    <a href="projects/Sandstorms/Sandstorms.zip">OS X</a> <br />
+                </p>
+                <h4>TGAEngine (2012)</h4>
+                <p>
+                    The aforementioned game engine has doxygen docs <a href="TGAEngine/index.html">here</a>. The source code is on <a href="https://github.com/tgashby/TGAEngine/tree/master/src">GitHub</a>.
+                </p>
+                
+                <h3>Adrenaline Rush (2013)</h3>
+                <p>
+                    Global Game Jam 2013 <br />
+                    We built a "rhythm" game where you could only move on the downbeat of your heart. There are items that increase and decrease your heartrate that makes the game easier or harder depending on the situation.
+                    <br />
+                    Full disclose, it didn't quite come out how we had hoped...
+                    <img src="img/adrenrush_instructions.png" width="75%">
+                </p>
+                <p>
+                    <a href="projects/AdrenalineRush/AdrenalineRushWindows.zip">Windows</a> <br />
+                    <a href="projects/AdrenalineRush/AdrenalineRushOSX.zip">OS X</a> <br />
+                    <a href="projects/AdrenalineRush/AdrenalineRushLinux.love_.zip">Linux</a>
+                </p>
 
-				$("a.section").click(function() {
-					var ele = $("#" + $(this).attr("id") + "-content");
+                <h3>Star Republic (2012)</h3>
+                <p>
+                    Game/Graphics course in college. Team of six. While again we all touched all of the areas of code, my biggest contribution was entity bounds checking, or rather "should we draw this thing or is it too far away / behind something".
+                    We wanted to make our own version of Star Fox because who doesn't!
+                </p>
+                <img src="img/starrepublic.png">
+                <p>
+                    There is no download link for this, the source code is available <a href="https://github.com/tgashby/Star-Republic">here.</a>
+                    We only got it running on OS X and Linux at the time.
+                </p>
 
-					if(selected != null) {
-						if(ele.attr("id") == selected.attr("id")) {
-							return false;
-						}
-
-						selected.animate({
-							opacity : 0.0,
-							top : "20px"
-						}, 300, function() {
-							$(this).css("top", "-20px");
-						});
-						selected.css("z-index", "1");
-					}
-
-					ele.animate({
-						opacity : 1.0,
-						top : "0px"
-					}, 300);
-					ele.css("z-index", "2");
-					selected = ele;
-
-					return false;
-				});
-			});
-
-		</script>
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-30212110-1']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript';
-				ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(ga, s);
-			})();
-
-		</script>
-	</head>
-	<body>
-		<div id="header">
-			<a href="index.html"><img src="img/header.jpg" alt="Header Image" /></a>
-			<h1>TgashbyGames</h1>
-			<h2>Run solely by Taggart Ashby</h2>
-		</div>
-		<div id="left">
-			<div id="about-me-content">
-				<h3>About Me</h3>
-				<p>
-					Hey there,
-					<br />
-					My name is Taggart Ashby, though I usually just go by Tag.
-					<br />
-					I'm a student at <a href="http://calpoly.edu/">Cal Poly, San Luis Obispo, CA</a> working on a blended BS/MS in Computer Science.
-					<br />
-					My passion for videogames started when I was child, and I haven't looked back since.
-					<br />
-					The only game available now is Cargo Nightmare, a 2D third-person shooter. It has taught me so much more than any class ever could.
-					<br />
-					I am currently working on a 2D platformer that should be pretty amazing. I have taken on a lot with this project but that is what of what makes it so much fun :-).
-					<br />
-					Thanks for checking out my site, and I hope you enjoy any games you find here :-).
-				</p>
-				<p>
-					If you'd like to contact me, don't hesitate to email at <a href="mailto:tgashby@calpoly.edu">tgashby@calpoly.edu</a> or call me at (916) 949-4933.
-				</p>
-			</div>
-			<div id="blog-content">
-				<h3>Blag</h3>
-				<p>
-					On occasion I'll post blog entires about current projects, my life in general, or any other thing
-					that's on my mind.
-				</p>
-				<a class="bigbutton" href="http://tgashby.blogspot.com/"><img src="img/blogger.png">&nbsp;Read my blog</a>
-			</div>
-			<div id="projects-content">
-				<h3>Projects</h3>
-				<p>
-					All my projects can be checked out on <a href="http://github.com/">GitHub</a>. I love Git and I love GitHub :-).
-				</p>
-				<a class="bigbutton" href="https://github.com/tgashby"><img src="img/github.png">&nbsp;My Projects</a>
-			</div>
-			<div id="twitter-content">
-				<h3>Twitter</h3>
-				<p>
-					I do my best to post twitter updates, but I can't say I'm all that great at it.... yet.
-				</p>
-				<a class="bigbutton" href="http://twitter.com/TgashbyGames"><img src="img/twitter.png">&nbsp;@TgashbyGames</a>
-			</div>
-			<div id="resume-content">
-				<h3>Resume</h3>
-				<p>
-					My resume is a two page PDF.
-				</p>
-				<a class="bigbutton" href="img/Resume10_12.pdf"><img src="img/pdf.png">&nbsp;Resume</a>
-				<p>
-					If you represent a <em>specific</em> company, send me an email <a href="mailto:tgashby@calpoly.edu">tgashby@calpoly.edu</a> or give me a call (916) 949-4933.
-				</p>
-			</div>
-		</div>
-		<div id="right">
-			<a class="section" id="about-me" href="#">About Me</a>
-			<a class="section" id="blog" href="#">Blog</a>
-			<a class="section" id="projects" href="#">Projects</a>
-			<a class="section" id="twitter" href="#">Twitter</a>
-			<a class="section" id="resume" href="#">Resume</a>
-		</div>
-	</body>
+                <h3>Self-Control'd (2012)</h3>
+                <p>
+                    School project for game class. This is my first (and probably last) foray into "voice acting" :-) <br />
+                    <a href="projects/Self-Control'd/index.html">Play here</a>
+                </p>
+                
+                <h3>Pong! (2013)</h3>
+                <p>
+                    Pong created with a a JS engine I made.
+                    <a href="projects/Pong/index.html">Pong!</a>
+                </p>
+            </div>
+        </div>
+    </body>
 </html>
