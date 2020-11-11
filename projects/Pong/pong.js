@@ -13,8 +13,8 @@ var lftPaddle = Goomba.newEntity("Paddle")
 var rtPaddle = Goomba.newEntity("Paddle")
     .addAttrs({ x: 570, y: 20, w: 15, h: 150, color: "#FF0000" })
     .controls({
-        UP_ARROW: function () { this.y -= 2 },
-        DOWN_ARROW: function () { this.y += 2 }
+        OPEN_BRACKET: function () { this.y -= 2 },
+        QUOTE: function () { this.y += 2 }
     });
 
 var ball = Goomba.newEntity("Collidable")

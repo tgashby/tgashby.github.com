@@ -2,7 +2,8 @@ $(function() {
     var selected = null;
 
     $("a.section").each(function() {
-        if($(this).attr("id") != "projects") {
+        var defaultId = "work";
+        if($(this).attr("id") != defaultId) {
             var ele = $("#" + $(this).attr("id") + "-content");
             ele.css("top", "-20px");
             ele.css("opacity", "0.0");

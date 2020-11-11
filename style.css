@@ -101,6 +101,14 @@ img
 	text-shadow: 0px 2px 2px black;
 }
 
+#content h4
+{
+	margin: 0px 0px 0px 5px;
+	color: #fff;
+	font: bold 30px Verdana;
+	text-shadow: 0px 2px 2px black;
+}
+
 #content p
 {
 	font: 18px Verdana;

@@ -542,7 +542,7 @@
                 OPEN_BRACKET: 219,
                 BCK_SLASH: 220,
                 CLOSE_BRACKET: 221,
-                QUTOTE: 222
+                QUOTE: 222
             },
 
             state: {}

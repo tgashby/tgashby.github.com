@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="../../style.css" type="text/css">
-	<script type="text/javascript" src="../../scripts/goomba.js"></script>
+	<script type="text/javascript" src="goomba.js"></script>
 </head>
 <body>
 	<h1>Pong!</h1>
-	<h2>Made with <a href="https://github.com/tgashby/Goomba">Goomba Engine</a></h2>
+    <h2>Made with <a href="https://github.com/tgashby/Goomba">Goomba Engine</a></h2>
+    <p>Move the left paddle with W / S, move the right paddle with [ / '</p>
 	<script type="text/javascript" src="pong.js"></script>
 
 	<div>
@@ -27,8 +28,8 @@ var lftPaddle = Goomba.newEntity("Paddle")
 var rtPaddle = Goomba.newEntity("Paddle")
     .addAttrs({ x: 570, y: 20, w: 15, h: 150, color: "#FF0000" })
     .controls({
-        UP_ARROW: function () { this.y -= 2 },
-        DOWN_ARROW: function () { this.y += 2 }
+        OPEN_BRACKET: function () { this.y -= 2 },
+        QUOTE: function () { this.y += 2 }
     });
 
 var ball = Goomba.newEntity("Collidable")
