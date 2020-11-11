@@ -3,6 +3,11 @@ body
 	background: #F7BE81;
 }
 
+img
+{
+	padding: 5px;
+}
+
 #header
 {
 	position: absolute;
